@@ -1,0 +1,3 @@
+ErrorDocument 404 http://localhost/game/404/index.php
+
+
