@@ -406,16 +406,21 @@ $user_id = $_SESSION['user_id'];
                                 <div class="elementor-element elementor-element-4708c68 elementor-widget elementor-widget-heading"
                                     data-id="4708c68" data-element_type="widget" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
-                                    <h1 class='numbering' id="current-task">Loading task...</h1>
+                                    <h1 class='numbering' id="current-task">
+                                  <?php  if ($select != null) {?>
+                                        Loading task...
+                                    <?php } else{ ?>
+                                        Task Completed 
+                                 <?php   } ?></h1>
                                     </div>
                                 </div>
-
+                               <?php if ($select != null) {?>
                                 <div id="app">
                                 </div>
                                 <button id="pause-button" onclick="toggleTimer()">
                                     <i id="pause-icon" class="fa fa-pause"></i> <!-- Font Awesome pause icon -->
                                 </button>
-
+                             <?php } ?>
                             </div>
                             <div class="progress-container">
                                 <div class="progress-line"></div>
@@ -479,9 +484,6 @@ $user_id = $_SESSION['user_id'];
         <script type='text/javascript'
             src='../wp-content/plugins/woo-smart-quick-view/assets/libs/magnific-popup/jquery.magnific-popup.min49eb.js?ver=3.5.2'
             id='magnific-popup-js'></script>
-        <script type='text/javascript'
-            src='../wp-content/plugins/woo-smart-quick-view/assets/js/frontend49eb.js?ver=3.5.2'
-            id='woosq-frontend-js'></script>
         <script type='text/javascript'
             src='../wp-content/plugins/ti-woocommerce-wishlist/assets/js/public.minf71b.js?ver=2.8.0'
             id='tinvwl-js'></script>
@@ -551,7 +553,7 @@ $user_id = $_SESSION['user_id'];
                 $('.search__close, .offCanvas__toggle, .offCanvas__overlay, .close-btn').on('click', () => new Audio('../wp-content/themes/mykd/assets/audio/remove.wav').play());
             });
         </script>
-  <script>
+<script>
     let tasks = <?php echo json_encode($select); ?>;
     let currentTaskIndex = 0;
     let isPaused = false;
@@ -574,7 +576,7 @@ $user_id = $_SESSION['user_id'];
         }
     };
 
-    const TIME_LIMIT = 30;
+    const TIME_LIMIT = 5;
     let timePassed = 0;
     let timeLeft = TIME_LIMIT;
     let timerInterval = null;
@@ -634,6 +636,25 @@ $user_id = $_SESSION['user_id'];
 
     function onTimesUp() {
         clearInterval(timerInterval);
+
+        // Update task status in the database
+        const typeId = tasks[currentTaskIndex].difficulty_id; 
+        console.log("type_id is ", typeId)
+        fetch('../action/update_task.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({
+                'type_id': typeId
+            })
+        }).then(response => response.text())
+          .then(data => {
+              console.log(data); // Log success message or handle response
+          }).catch(error => {
+              console.error('Error:', error);
+          });
+
         if (currentTaskIndex < tasks.length - 1) {
             currentTaskIndex++;
             showNextTask();
@@ -705,6 +726,7 @@ $user_id = $_SESSION['user_id'];
     showNextTask();
     startTimer();
 </script>
+
 
 
         <script>

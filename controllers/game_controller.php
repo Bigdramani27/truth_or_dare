@@ -56,3 +56,12 @@ function add_game_task_to_user_controller($difficulty_id, $user_id, $completed)
       $new_customer = new Game();
       return $new_customer->select_game_for_specific_user($user_id, $type);
   }
+ 
+   // update user task as completed
+   function  update_user_completed_task_controller($difficulty_id, $user_id)
+   {
+       $new_customer = new Game();
+       return $new_customer-> update_user_completed_task($difficulty_id, $user_id);
+   }
+  
+ 

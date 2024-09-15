@@ -49,4 +49,9 @@ class Game extends Connection
     function select_game_for_specific_user($user_id, $type){
         return $this->fetch("select * from difficulty dif inner join user_game  game on game.difficulty_id = dif.difficulty_id where user_id = '$user_id' and dif.type = '$type' and completed = 'No'");
     }
+
+    //update user task completed to yes 
+    function update_user_completed_task($difficulty_id, $user_id){
+        return $this->query("update user_game set completed = 'Yes' where difficulty_id = '$difficulty_id' and user_id = '$user_id'");
+    }
 }
