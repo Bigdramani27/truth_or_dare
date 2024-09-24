@@ -1,13 +1,13 @@
-<?php 
+<?php
 session_start();
-require ("../controllers/game_controller.php");
+require("../controllers/game_controller.php");
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
 $difficulty = $_GET['type'];
-if($difficulty != 'simple' && $difficulty != 'crazy' && $difficulty != 'horny' && $difficulty != 'sick_fuck'){
+if ($difficulty != 'simple' && $difficulty != 'crazy' && $difficulty != 'horny' && $difficulty != 'sick_fuck') {
     header("Location: ../404/");
 }
-if($username == 0){
-    header("Location: ../login/"); 
+if ($username == 0) {
+    header("Location: ../login/");
 }
 $user_id = $_SESSION['user_id'];
 
@@ -160,10 +160,10 @@ $user_id = $_SESSION['user_id'];
         .numbering {
             text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 20px 30px rgba(0, 0, 0, 0.5);
             text-align: center;
-            display: flex;
+            display: block;
             align-items: center;
             justify-content: center;
-            height: 50vh;
+
         }
 
         .progress-container {
@@ -196,6 +196,19 @@ $user_id = $_SESSION['user_id'];
             color: white;
             transition: left 0.3s ease-in-out;
         }
+
+        .overall {
+            height: 500px;
+            border: 8px solid var(--tg-theme-primary);
+            width: 80%;
+            margin-right: auto;
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.42);
+        }
     </style>
     <!-- Scroll-top -->
     <button class="scroll__top scroll-to-target" data-target="html">
@@ -216,7 +229,7 @@ $user_id = $_SESSION['user_id'];
                                 <div class="logo">
                                     <a class="main-logo" href="index.php">
                                         <img src="../wp-content/themes/mykd/assets/img/logo/logo.png"
-                                            style="max-height: 40px" alt="Logo" />
+                                            style="max-height: 80px" alt="Logo" />
                                     </a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
@@ -241,18 +254,18 @@ $user_id = $_SESSION['user_id'];
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action d-none d-md-block">
-                                <ul class="list-wrap">
-                                        <?php if($username == 0){ ?>
-                                        <li class="header-btn">
-                                            <a href="../login/index.php" class="tg-border-btn">
-                                                <i class="flaticon-edit"></i> ~Login </a>
-                                        </li>
+                                    <ul class="list-wrap">
+                                        <?php if ($username == 0) { ?>
+                                            <li class="header-btn">
+                                                <a href="../login/index.php" class="tg-border-btn">
+                                                    <i class="flaticon-edit"></i> ~Login </a>
+                                            </li>
                                         <?php } else { ?>
                                             <li class="header-btn">
-                                            <a href="../player-details/index.php" class="tg-border-btn">
-                                                <i class="flaticon-edit"></i> <?php echo $_SESSION['username']?> </a>
+                                                <a href="../player-details/index.php" class="tg-border-btn">
+                                                    <i class="flaticon-edit"></i> <?php echo $_SESSION['username'] ?> </a>
                                             </li>
-                                       <?php } ?>
+                                        <?php } ?>
                                         <li class="side-toggle-icon">
                                             <span></span>
                                             <span></span>
@@ -313,6 +326,7 @@ $user_id = $_SESSION['user_id'];
                             <li><a href="tel:+233 548342821">+233 548342821</a></li>
 
                             <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                            <li><a href="https://bigdramani27.github.io/My-Profile/">View other projects</a></li>
                         </ul>
                     </div>
                 </div>
@@ -340,7 +354,7 @@ $user_id = $_SESSION['user_id'];
                                 <div class="breadcrumb__content">
                                     <h2 class="title">difficulty</h2>
                                     <nav aria-label="breadcrumb" class="breadcrumb">
-                                        <span><a class="home"><span>MYKD</span></a>
+                                        <span><a class="home"><span>Fremoria</span></a>
                                         </span> &gt; <span>difficulty</span>
                                     </nav>
                                 </div>
@@ -390,49 +404,49 @@ $user_id = $_SESSION['user_id'];
                                     </svg>
                                 </a>
                             </div>
-
                         </div>
+                        <?php if ($difficulty == 'sick_fuck'){ ?> 
+                        <h5><span style="color: red; font-size:25px">!!! </span><em>For this mode, you will <span style="color: red; font-size:25px">Remove</span> a piece of clothing if you <span style="font-size:20px">refuse </span> to comply</em></h5>
+                        <?php } ?>
                     </div>
-
 
                     <div class="elementor-element elementor-element-78af342 elementor-widget elementor-widget-tg-gallery"
                         data-id="78af342" data-element_type="widget" data-widget_type="tg-gallery.default">
                         <div class="elementor-widget-container">
 
-                        <?php $select = select_game_for_specific_user_controller($user_id, $difficulty);
+                            <?php $select = select_game_for_specific_user_controller($user_id, $difficulty);
+
                             ?>
-                            <div class="overall"
-                                style="height:500px; border: 8px solid var(--tg-theme-primary); width:70%; margin-right:auto; margin-left:auto; display: block; box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.42)">
-                                <div class="elementor-element elementor-element-4708c68 elementor-widget elementor-widget-heading"
-                                    data-id="4708c68" data-element_type="widget" data-widget_type="heading.default">
-                                    <div class="elementor-widget-container">
+                            <div class="overall">
+                                <div>
                                     <h1 class='numbering' id="current-task">
-                                  <?php  if ($select != null) {?>
-                                        Loading task...
-                                    <?php } else{ ?>
-                                        Task Completed 
-                                 <?php   } ?></h1>
-                                    </div>
+                                        <?php if ($select != null) { ?>
+                                            <span id="countdown">Get ready: 30
+                                                <br><span style="font-size:20px"><i style='color:red' class='fa fa-exclamation-triangle'></i>  Ensure that everyone gives their consent before participating!!!</span>
+                                            </span>
+                                        <?php } else { ?>
+                                            Task Completed
+                                        <?php } ?>
+                                    </h1>
                                 </div>
-                               <?php if ($select != null) {?>
-                                <div id="app">
-                                </div>
-                                <button id="pause-button" onclick="toggleTimer()">
-                                    <i id="pause-icon" class="fa fa-pause"></i> <!-- Font Awesome pause icon -->
-                                </button>
-                             <?php } ?>
+
+                                <?php if ($select != null) { ?>
+                                    <div id="app"></div>
+                                    <button id="pause-button" onclick="toggleTimer()">
+                                        <i id="pause-icon" class="fa fa-pause"></i> <!-- Font Awesome pause icon -->
+                                    </button>
+                                <?php } ?>
                             </div>
                             <div class="progress-container">
                                 <div class="progress-line"></div>
-                                <div class="progress-circle" id="progressCircle">40%</div>
+                                <div class="progress-circle" id="progressCircle">0%</div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
+
         <footer>
             <div class="elementor elementor-726">
                 <div class="elementor-element elementor-element-7f14363 e-flex e-con-boxed e-con e-parent">
@@ -484,9 +498,6 @@ $user_id = $_SESSION['user_id'];
         <script type='text/javascript'
             src='../wp-content/plugins/woo-smart-quick-view/assets/libs/magnific-popup/jquery.magnific-popup.min49eb.js?ver=3.5.2'
             id='magnific-popup-js'></script>
-        <script type='text/javascript'
-            src='../wp-content/plugins/ti-woocommerce-wishlist/assets/js/public.minf71b.js?ver=2.8.0'
-            id='tinvwl-js'></script>
         <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/bootstrap.mine35d.js?ver=6.3.2'
             id='bootstrap-bundle-js'></script>
         <script type='text/javascript' src='../wp-includes/js/imagesloaded.mineda1.js?ver=4.1.4'
@@ -525,9 +536,6 @@ $user_id = $_SESSION['user_id'];
             id='mykd-main-js'></script>
         <script type='text/javascript' src='../wp-content/plugins/mykd-core/assets/js/hello-worlde35d.js?ver=6.3.2'
             id='genixcore-js'></script>
-        <script type='text/javascript' defer
-            src='../wp-content/plugins/mailchimp-for-wp/assets/js/forms8e83.js?ver=4.9.10'
-            id='mc4wp-forms-api-js'></script>
         <script type='text/javascript'
             src='../wp-content/plugins/elementor/assets/js/webpack.runtime.min5d63.js?ver=3.17.1'
             id='elementor-webpack-runtime-js'></script>
@@ -540,12 +548,128 @@ $user_id = $_SESSION['user_id'];
         <script type='text/javascript' src='../wp-includes/js/jquery/ui/core.min3f14.js?ver=1.13.2'
             id='jquery-ui-core-js'></script>
         <script id="elementor-frontend-js-before" type="text/javascript">
-            var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false, "isScriptDebug": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "download": "Download", "downloadImage": "Download image", "fullscreen": "Fullscreen", "zoom": "Zoom", "share": "Share", "playVideo": "Play Video", "previous": "Previous", "next": "Next", "close": "Close", "a11yCarouselWrapperAriaLabel": "Carousel | Horizontal scrolling: Arrow Left & Right", "a11yCarouselPrevSlideMessage": "Previous slide", "a11yCarouselNextSlideMessage": "Next slide", "a11yCarouselFirstSlideMessage": "This is the first slide", "a11yCarouselLastSlideMessage": "This is the last slide", "a11yCarouselPaginationBulletMessage": "Go to slide" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "responsive": { "breakpoints": { "mobile": { "label": "Mobile Portrait", "value": 767, "default_value": 767, "direction": "max", "is_enabled": true }, "mobile_extra": { "label": "Mobile Landscape", "value": 880, "default_value": 880, "direction": "max", "is_enabled": false }, "tablet": { "label": "Tablet Portrait", "value": 1024, "default_value": 1024, "direction": "max", "is_enabled": true }, "tablet_extra": { "label": "Tablet Landscape", "value": 1200, "default_value": 1200, "direction": "max", "is_enabled": false }, "laptop": { "label": "Laptop", "value": 1366, "default_value": 1366, "direction": "max", "is_enabled": true }, "widescreen": { "label": "Widescreen", "value": 2400, "default_value": 2400, "direction": "min", "is_enabled": false } } }, "version": "3.17.1", "is_static": false, "experimentalFeatures": { "e_dom_optimization": true, "e_optimized_assets_loading": true, "e_optimized_css_loading": true, "additional_custom_breakpoints": true, "container": true, "e_swiper_latest": true, "landing-pages": true, "e_global_styleguide": true }, "urls": { "assets": "https:\/\/themedox.com\/mykd\/../wp-content\/plugins\/elementor\/assets\/" }, "swiperClass": "swiper", "settings": { "page": [], "editorPreferences": [] }, "kit": { "active_breakpoints": ["viewport_mobile", "viewport_tablet", "viewport_laptop"], "lightbox_enable_counter": "yes", "lightbox_enable_fullscreen": "yes", "lightbox_enable_zoom": "yes", "lightbox_enable_share": "yes", "lightbox_title_src": "title", "lightbox_description_src": "description" }, "post": { "id": 77, "title": "MYKD%20%E2%80%93%20eSports%20and%20Gaming%20NFT%20Theme", "excerpt": "", "featuredImage": false } };
+            var elementorFrontendConfig = {
+                "environmentMode": {
+                    "edit": false,
+                    "wpPreview": false,
+                    "isScriptDebug": false
+                },
+                "i18n": {
+                    "shareOnFacebook": "Share on Facebook",
+                    "shareOnTwitter": "Share on Twitter",
+                    "pinIt": "Pin it",
+                    "download": "Download",
+                    "downloadImage": "Download image",
+                    "fullscreen": "Fullscreen",
+                    "zoom": "Zoom",
+                    "share": "Share",
+                    "playVideo": "Play Video",
+                    "previous": "Previous",
+                    "next": "Next",
+                    "close": "Close",
+                    "a11yCarouselWrapperAriaLabel": "Carousel | Horizontal scrolling: Arrow Left & Right",
+                    "a11yCarouselPrevSlideMessage": "Previous slide",
+                    "a11yCarouselNextSlideMessage": "Next slide",
+                    "a11yCarouselFirstSlideMessage": "This is the first slide",
+                    "a11yCarouselLastSlideMessage": "This is the last slide",
+                    "a11yCarouselPaginationBulletMessage": "Go to slide"
+                },
+                "is_rtl": false,
+                "breakpoints": {
+                    "xs": 0,
+                    "sm": 480,
+                    "md": 768,
+                    "lg": 1025,
+                    "xl": 1440,
+                    "xxl": 1600
+                },
+                "responsive": {
+                    "breakpoints": {
+                        "mobile": {
+                            "label": "Mobile Portrait",
+                            "value": 767,
+                            "default_value": 767,
+                            "direction": "max",
+                            "is_enabled": true
+                        },
+                        "mobile_extra": {
+                            "label": "Mobile Landscape",
+                            "value": 880,
+                            "default_value": 880,
+                            "direction": "max",
+                            "is_enabled": false
+                        },
+                        "tablet": {
+                            "label": "Tablet Portrait",
+                            "value": 1024,
+                            "default_value": 1024,
+                            "direction": "max",
+                            "is_enabled": true
+                        },
+                        "tablet_extra": {
+                            "label": "Tablet Landscape",
+                            "value": 1200,
+                            "default_value": 1200,
+                            "direction": "max",
+                            "is_enabled": false
+                        },
+                        "laptop": {
+                            "label": "Laptop",
+                            "value": 1366,
+                            "default_value": 1366,
+                            "direction": "max",
+                            "is_enabled": true
+                        },
+                        "widescreen": {
+                            "label": "Widescreen",
+                            "value": 2400,
+                            "default_value": 2400,
+                            "direction": "min",
+                            "is_enabled": false
+                        }
+                    }
+                },
+                "version": "3.17.1",
+                "is_static": false,
+                "experimentalFeatures": {
+                    "e_dom_optimization": true,
+                    "e_optimized_assets_loading": true,
+                    "e_optimized_css_loading": true,
+                    "additional_custom_breakpoints": true,
+                    "container": true,
+                    "e_swiper_latest": true,
+                    "landing-pages": true,
+                    "e_global_styleguide": true
+                },
+                "urls": {
+                    "assets": "https:\/\/themedox.com\/mykd\/../wp-content\/plugins\/elementor\/assets\/"
+                },
+                "swiperClass": "swiper",
+                "settings": {
+                    "page": [],
+                    "editorPreferences": []
+                },
+                "kit": {
+                    "active_breakpoints": ["viewport_mobile", "viewport_tablet", "viewport_laptop"],
+                    "lightbox_enable_counter": "yes",
+                    "lightbox_enable_fullscreen": "yes",
+                    "lightbox_enable_zoom": "yes",
+                    "lightbox_enable_share": "yes",
+                    "lightbox_title_src": "title",
+                    "lightbox_description_src": "description"
+                },
+                "post": {
+                    "id": 77,
+                    "title": "MYKD%20%E2%80%93%20eSports%20and%20Gaming%20NFT%20Theme",
+                    "excerpt": "",
+                    "featuredImage": false
+                }
+            };
         </script>
         <script type='text/javascript' src='../wp-content/plugins/elementor/assets/js/frontend.min5d63.js?ver=3.17.1'
             id='elementor-frontend-js'></script>
         <script>
-            jQuery(document).ready(function ($) {
+            jQuery(document).ready(function($) {
                 /*===========================================
                     =        Click Sound Active		      =
                 =============================================*/
@@ -553,37 +677,67 @@ $user_id = $_SESSION['user_id'];
                 $('.search__close, .offCanvas__toggle, .offCanvas__overlay, .close-btn').on('click', () => new Audio('../wp-content/themes/mykd/assets/audio/remove.wav').play());
             });
         </script>
-<script>
-    let tasks = <?php echo json_encode($select); ?>;
-    let currentTaskIndex = 0;
-    let isPaused = false;
+        <script>
+            let tasks = <?php echo json_encode($select); ?>;
+            let currentTaskIndex = 0;
+            let isPaused = false;
 
-    const FULL_DASH_ARRAY = 283;
-    const WARNING_THRESHOLD = 10;
-    const ALERT_THRESHOLD = 5;
+            const FULL_DASH_ARRAY = 283;
+            const WARNING_THRESHOLD = 10;
+            const ALERT_THRESHOLD = 5;
 
-    const COLOR_CODES = {
-        info: {
-            color: "green"
-        },
-        warning: {
-            color: "orange",
-            threshold: WARNING_THRESHOLD
-        },
-        alert: {
-            color: "red",
-            threshold: ALERT_THRESHOLD
-        }
-    };
+            const COLOR_CODES = {
+                info: {
+                    color: "green"
+                },
+                warning: {
+                    color: "orange",
+                    threshold: WARNING_THRESHOLD
+                },
+                alert: {
+                    color: "red",
+                    threshold: ALERT_THRESHOLD
+                }
+            };
 
-    const TIME_LIMIT = 5;
-    let timePassed = 0;
-    let timeLeft = TIME_LIMIT;
-    let timerInterval = null;
-    let remainingPathColor = COLOR_CODES.info.color;
+            const TIME_LIMIT = 30; // Time for each task
+            let timePassed = 0;
+            let timeLeft = TIME_LIMIT;
+            let timerInterval = null;
+            let remainingPathColor = COLOR_CODES.info.color;
 
-    // Initialize the timer display
-    document.getElementById("app").innerHTML = `
+            function formatTime(time) {
+                const minutes = Math.floor(time / 60);
+                let seconds = time % 60;
+                if (seconds < 10) {
+                    seconds = `0${seconds}`;
+                }
+                return `${minutes}:${seconds}`;
+            }
+            document.getElementById('pause-icon').style.display = 'none';
+
+            function startInitialCountdown() {
+                let countdownTime = 30; // Initial countdown time
+                const countdownElement = document.getElementById("countdown");
+
+                countdownElement.innerHTML = `Get ready: ${countdownTime} <br><span style="font-size:20px"><i style='color:red' class='fa fa-exclamation-triangle'></i> Ensure that everyone gives their consent before participating!!!</span>`;
+                const countdownInterval = setInterval(() => {
+                    countdownTime -= 1;
+                    countdownElement.innerHTML = `Get ready: ${countdownTime} <br><span style="font-size:20px"><i style='color:red' class='fa fa-exclamation-triangle'></i>  Ensure that everyone gives their consent before participating!!!</span>`;
+
+
+                    if (countdownTime <= 0) {
+                        clearInterval(countdownInterval);
+                        countdownElement.innerText = ''; // Clear countdown message
+                        document.getElementById('pause-icon').style.display = 'block';
+
+                        startTask(); // Start the task timer
+                    }
+                }, 1000);
+            }
+
+            function startTask() {
+                document.getElementById("app").innerHTML = `
         <div class="base-timer">
             <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <g class="base-timer__circle">
@@ -603,140 +757,143 @@ $user_id = $_SESSION['user_id'];
             </svg>
             <span id="base-timer-label" class="base-timer__label">${formatTime(timeLeft)}</span>
         </div>
-    `;
-
-    function toggleTimer() {
-        isPaused = !isPaused;
-        const pauseIcon = document.getElementById("pause-icon");
-
-        if (isPaused) {
-            clearInterval(timerInterval);
-            pauseIcon.classList.remove("fa-pause");
-            pauseIcon.classList.add("fa-play");
-        } else {
-            startTimer();
-            pauseIcon.classList.remove("fa-play");
-            pauseIcon.classList.add("fa-pause");
-        }
-    }
-
-    function startTimer() {
-        timerInterval = setInterval(() => {
-            timePassed += 1;
-            timeLeft = TIME_LIMIT - timePassed;
-            document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
-            setCircleDasharray();
-            setRemainingPathColor(timeLeft);
-
-            if (timeLeft <= 0) {
-                onTimesUp();
+        `;
+                showNextTask();
+                startTimer();
             }
-        }, 1000);
-    }
 
-    function onTimesUp() {
-        clearInterval(timerInterval);
+            function toggleTimer() {
+                isPaused = !isPaused;
+                const pauseIcon = document.getElementById("pause-icon");
 
-        // Update task status in the database
-        const typeId = tasks[currentTaskIndex].difficulty_id; 
-        console.log("type_id is ", typeId)
-        fetch('../action/update_task.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: new URLSearchParams({
-                'type_id': typeId
-            })
-        }).then(response => response.text())
-          .then(data => {
-              console.log(data); // Log success message or handle response
-          }).catch(error => {
-              console.error('Error:', error);
-          });
+                if (isPaused) {
+                    clearInterval(timerInterval);
+                    pauseIcon.classList.remove("fa-pause");
+                    pauseIcon.classList.add("fa-play");
+                } else {
+                    startTimer();
+                    pauseIcon.classList.remove("fa-play");
+                    pauseIcon.classList.add("fa-pause");
+                }
+            }
 
-        if (currentTaskIndex < tasks.length - 1) {
-            currentTaskIndex++;
-            showNextTask();
-            startTimer(); // Restart the timer for the next task
-        } else {
-            document.getElementById("app").innerHTML = "<center><h2>All tasks are completed!</h2></center>";
-        }
-    }
+            function startTimer() {
+                timerInterval = setInterval(() => {
+                    timePassed += 1;
+                    timeLeft = TIME_LIMIT - timePassed;
+                    document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
+                    setCircleDasharray();
+                    setRemainingPathColor(timeLeft);
 
-    function showNextTask() {
-        if (currentTaskIndex < tasks.length) {
-            const nextTask = tasks[currentTaskIndex];
-            document.getElementById("current-task").innerText = nextTask.task;
-            timeLeft = TIME_LIMIT; // Reset timer
-            timePassed = 0;
-            remainingPathColor = COLOR_CODES.info.color; // Reset color
-            setCircleDasharray();
-        }
-    }
+                    if (timeLeft <= 0) {
+                        onTimesUp();
+                    }
+                }, 1000);
+            }
 
-    function formatTime(time) {
-        const minutes = Math.floor(time / 60);
-        let seconds = time % 60;
+            function onTimesUp() {
+                clearInterval(timerInterval);
 
-        if (seconds < 10) {
-            seconds = `0${seconds}`;
-        }
+                // Update task status in the database
+                const typeId = tasks[currentTaskIndex]?.difficulty_id; // Safely access task's difficulty_id
 
-        return `${minutes}:${seconds}`;
-    }
+                fetch('../action/update_task.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: new URLSearchParams({
+                            'type_id': typeId
+                        })
+                    }).then(response => response.text())
+                    .then(data => {
+                        console.log(data); // Log success message or handle response
+                    }).catch(error => {
+                        console.error('Error:', error);
+                    });
 
-    function setRemainingPathColor(timeLeft) {
-        const { alert, warning, info } = COLOR_CODES;
-        if (timeLeft <= alert.threshold) {
-            document
-                .getElementById("base-timer-path-remaining")
-                .classList.remove(warning.color);
-            document
-                .getElementById("base-timer-path-remaining")
-                .classList.add(alert.color);
-        } else if (timeLeft <= warning.threshold) {
-            document
-                .getElementById("base-timer-path-remaining")
-                .classList.remove(info.color);
-            document
-                .getElementById("base-timer-path-remaining")
-                .classList.add(warning.color);
-        }
-    }
+                // Check if there are more tasks
+                if (currentTaskIndex < tasks.length - 1) {
+                    currentTaskIndex++;
+                    showNextTask();
+                    startTimer(); // Restart the timer for the next task
+                } else {
+                    document.getElementById("current-task").innerHTML = "<center><h2>All tasks are completed!</h2></center>";
+                }
 
-    function calculateTimeFraction() {
-        const rawTimeFraction = timeLeft / TIME_LIMIT;
-        return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
-    }
+                // Always fetch progress, even if it's the last task
+                fetchProgress();
+            }
 
-    function setCircleDasharray() {
-        const circleDasharray = `${(
-            calculateTimeFraction() * FULL_DASH_ARRAY
-        ).toFixed(0)} 283`;
-        document
-            .getElementById("base-timer-path-remaining")
-            .setAttribute("stroke-dasharray", circleDasharray);
-        document
-            .getElementById("base-timer-path-remaining")
-            .setAttribute("class", `base-timer__path-remaining ${remainingPathColor}`); // Update color
-    }
+            function showNextTask() {
+                if (currentTaskIndex < tasks.length) {
+                    const nextTask = tasks[currentTaskIndex];
+                    document.getElementById("current-task").innerText = nextTask.task;
+                    timeLeft = TIME_LIMIT; // Reset timer
+                    timePassed = 0;
+                    remainingPathColor = COLOR_CODES.info.color; // Reset color
+                    setCircleDasharray();
+                }
+            }
 
-    // Initialize the first task
-    showNextTask();
-    startTimer();
-</script>
+            function setRemainingPathColor(timeLeft) {
+                const {
+                    alert,
+                    warning,
+                    info
+                } = COLOR_CODES;
+                if (timeLeft <= alert.threshold) {
+                    document.getElementById("base-timer-path-remaining").classList.remove(warning.color);
+                    document.getElementById("base-timer-path-remaining").classList.add(alert.color);
+                } else if (timeLeft <= warning.threshold) {
+                    document.getElementById("base-timer-path-remaining").classList.remove(info.color);
+                    document.getElementById("base-timer-path-remaining").classList.add(warning.color);
+                }
+            }
 
+            function calculateTimeFraction() {
+                const rawTimeFraction = timeLeft / TIME_LIMIT;
+                return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+            }
 
+            function setCircleDasharray() {
+                const circleDasharray = `${(calculateTimeFraction() * FULL_DASH_ARRAY).toFixed(0)} 283`;
+                document.getElementById("base-timer-path-remaining").setAttribute("stroke-dasharray", circleDasharray);
+                document.getElementById("base-timer-path-remaining").setAttribute("class", `base-timer__path-remaining ${remainingPathColor}`);
+            }
+
+            // Initialize the initial countdown
+            startInitialCountdown();
+        </script>
 
         <script>
             const progressContainer = document.querySelector('.progress-container');
             const progressCircle = document.getElementById('progressCircle');
 
-            // Set initial progress value (between 0 and 1)
-            let progressValue = 0.5;
+            // Function to fetch progress and update progress circle
+            function fetchProgress() {
+                const type = <?php echo json_encode($difficulty); ?>;
 
-            // Update circle position based on progress value with animation
+                // Fetch progress data from progress.php
+                fetch('../action/progress.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: new URLSearchParams({
+                            'type': type
+                        })
+                    })
+                    .then(response => response.json()) // Parse JSON response
+                    .then(data => {
+                        const overall = data.overall / 100; // Convert percentage to decimal
+                        setProgress(overall); // Update progress bar
+                        progressCircle.innerText = `${data.overall}%`; // Update percentage text
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+
+            // Function to update circle position based on progress value
             function updateCirclePosition() {
                 const lineWidth = progressContainer.offsetWidth;
                 const circleSize = progressCircle.offsetWidth;
@@ -744,18 +901,16 @@ $user_id = $_SESSION['user_id'];
                 progressCircle.style.left = `${circlePosition}px`;
             }
 
-            // Example: Update progress value (between 0 and 1) with animation
+            // Function to set progress (value between 0 and 1)
             function setProgress(value) {
                 progressValue = Math.min(1, Math.max(0, value));
                 updateCirclePosition();
             }
 
-            // Initial setup
-            updateCirclePosition();
-
-            // Example: Set progress to 0.8 (80%) with animation
-            setProgress(.4);
+            // Initial setup: Fetch and update progress
+            fetchProgress();
         </script>
+
 
 </body>
 

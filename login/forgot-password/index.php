@@ -68,6 +68,9 @@
     <link rel="icon" href="../../wp-content/uploads/2023/10/favicon.png" sizes="32x32" />
     <link rel="icon" href="../../wp-content/uploads/2023/10/favicon.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="../../wp-content/uploads/2023/10/favicon.png" />
+    <link rel='stylesheet' id='font-awesome-free-css'
+		href='../../wp-content/themes/mykd/assets/css/fontawesome-all.mine35d.css?ver=6.3.2' type='text/css' media='all' />
+
 </head>
 
 <body>
@@ -91,7 +94,7 @@
                                 <div class="logo">
                                     <a class="main-logo" href="index.php">
                                         <img src="../../wp-content/themes/mykd/assets/img/logo/logo.png"
-                                            style="max-height: 40px" alt="Logo" />
+                                            style="max-height: 80px" alt="Logo" />
                                     </a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
@@ -182,7 +185,8 @@
 
                             <li><a href="tel:+233 548342821">+233 548342821</a></li>
 
-                            <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                           <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                            <li><a href="https://bigdramani27.github.io/My-Profile/">View other projects</a></li>
                         </ul>
                     </div>
                 </div>
@@ -212,7 +216,7 @@
                             <div class="breadcrumb__content">
                                 <h2 class="title">Forgot Password</h2>
                                 <nav aria-label="breadcrumb" class="breadcrumb">
-                                    <span><a class="home"><span>MYKD</span></a>
+                                    <span><a class="home"><span>Fremoria</span></a>
                                     </span> &gt; <span>Forgot Password</span>
                                 </nav>
                             </div>

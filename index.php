@@ -1,6 +1,6 @@
-<?php 
+<?php
 session_start();
-require ("controllers/game_controller.php");
+require("controllers/game_controller.php");
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
 ?>
 <!doctype html>
@@ -93,7 +93,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                 <div class="logo">
                                     <a class="main-logo" href="index.php">
                                         <img src="wp-content/themes/mykd/assets/img/logo/logo.png"
-                                            style="max-height: 40px" alt="Logo" />
+                                            style="max-height: 80px" alt="Logo" />
                                     </a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
@@ -119,17 +119,17 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                 </div>
                                 <div class="tgmenu__action d-none d-md-block">
                                     <ul class="list-wrap">
-                                        <?php if($username == 0){ ?>
-                                        <li class="header-btn">
-                                            <a href="login/index.php" class="tg-border-btn">
-                                                <i class="flaticon-edit"></i> ~Login </a>
-                                        </li>
+                                        <?php if ($username == 0) { ?>
+                                            <li class="header-btn">
+                                                <a href="login/index.php" class="tg-border-btn">
+                                                    <i class="flaticon-edit"></i> ~Login </a>
+                                            </li>
                                         <?php } else { ?>
                                             <li class="header-btn">
-                                            <a href="player-details/index.php" class="tg-border-btn">
-                                                <i class="flaticon-edit"></i> <?php echo $_SESSION['username']?> </a>
+                                                <a href="player-details/index.php" class="tg-border-btn">
+                                                    <i class="flaticon-edit"></i> <?php echo $_SESSION['username'] ?> </a>
                                             </li>
-                                       <?php } ?>
+                                        <?php } ?>
                                         <li class="side-toggle-icon">
                                             <span></span>
                                             <span></span>
@@ -188,8 +188,8 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                         <ul class="offCanvas__contact-list list-wrap">
 
                             <li><a href="tel:+233 548342821">+233 548342821</a></li>
-
-                            <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                           <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                            <li><a href="https://bigdramani27.github.io/My-Profile/">View other projects</a></li>
                         </ul>
                     </div>
                 </div>
@@ -224,7 +224,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                             Game Night </h6>
                                         <h2 class="title wow fadeInUp" data-wow-delay=".5s">Truth or Dare</h2>
 
-                                        <div class="slider__btn wow fadeInUp" data-wow-delay="1.2s">
+                                        <div class="slider__btn wow fadeInUp" data-wow-delay="1.2s" style="margin-bottom: 100px;">
                                             <a href="#started" class="tg-btn-1">
                                                 <span>Get Started</span>
                                                 <svg preserveAspectRatio="none" viewBox="0 0 197 60" fill="none"
@@ -283,17 +283,17 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                             <div class="swiper-slide">
                                 <div class="streamers__item">
                                     <div class="streamers__thumb">
-                                    <?php if($username == 0){ ?>
-                                        <a href="login/index.php">
-                                            <img decoding="async" src="wp-content/uploads/2023/10/simple.jpg"
-                                                style="height: 400px; ">
-                                        </a>
-                                    <?php } else { ?>
-                                        <a href="difficulty/index.php?type=simple">
-                                            <img decoding="async" src="wp-content/uploads/2023/10/simple.jpg"
-                                                style="height: 400px; ">
-                                        </a> 
-                                  <?php  } ?>
+                                        <?php if ($username == 0) { ?>
+                                            <a href="login/index.php">
+                                                <img decoding="async" src="wp-content/uploads/2023/10/simple.jpg"
+                                                    style="height: 400px; ">
+                                            </a>
+                                        <?php } else { ?>
+                                            <a href="difficulty/index.php?type=simple">
+                                                <img decoding="async" src="wp-content/uploads/2023/10/simple.jpg"
+                                                    style="height: 400px; ">
+                                            </a>
+                                        <?php  } ?>
                                     </div>
                                     <div class="streamers__content">
                                         <h4 class="name">Simple</h4>
@@ -305,17 +305,17 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                             <div class="swiper-slide">
                                 <div class="streamers__item">
                                     <div class="streamers__thumb">
-                                    <?php if($username == 0){ ?>
-                                        <a href="login/index.php">
-                                            <img decoding="async" src="wp-content/uploads/2023/10/crazy.jpg"
-                                                style="height: 400px; ">
-                                        </a>
-                                    <?php } else { ?>
-                                        <a href="difficulty/index.php?type=crazy">
-                                            <img decoding="async" src="wp-content/uploads/2023/10/crazy.jpg"
-                                                style="height: 400px; ">
-                                        </a> 
-                                  <?php  } ?>
+                                        <?php if ($username == 0) { ?>
+                                            <a href="login/index.php">
+                                                <img decoding="async" src="wp-content/uploads/2023/10/crazy.jpg"
+                                                    style="height: 400px; ">
+                                            </a>
+                                        <?php } else { ?>
+                                            <a href="difficulty/index.php?type=crazy">
+                                                <img decoding="async" src="wp-content/uploads/2023/10/crazy.jpg"
+                                                    style="height: 400px; ">
+                                            </a>
+                                        <?php  } ?>
                                     </div>
                                     <div class="streamers__content">
                                         <h4 class="name">Crazy</h4>
@@ -327,17 +327,17 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                             <div class="swiper-slide">
                                 <div class="streamers__item">
                                     <div class="streamers__thumb">
-                                    <?php if($username == 0){ ?>
-                                        <a href="login/index.php">
-                                            <img decoding="async" src="wp-content/uploads/2023/10/1.jpg"
-                                                style="height: 400px; ">
-                                        </a>
-                                    <?php } else { ?>
-                                        <a href="difficulty/index.php?type=horny">
-                                            <img decoding="async" src="wp-content/uploads/2023/10/1.jpg"
-                                                style="height: 400px; ">
-                                        </a> 
-                                  <?php  } ?>
+                                        <?php if ($username == 0) { ?>
+                                            <a href="login/index.php">
+                                                <img decoding="async" src="wp-content/uploads/2023/10/1.jpg"
+                                                    style="height: 400px; ">
+                                            </a>
+                                        <?php } else { ?>
+                                            <a href="difficulty/index.php?type=horny">
+                                                <img decoding="async" src="wp-content/uploads/2023/10/1.jpg"
+                                                    style="height: 400px; ">
+                                            </a>
+                                        <?php  } ?>
                                     </div>
                                     <div class="streamers__content">
                                         <h4 class="name">Horny</h4>
@@ -349,17 +349,17 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                             <div class="swiper-slide">
                                 <div class="streamers__item">
                                     <div class="streamers__thumb">
-                                    <?php if($username == 0){ ?>
-                                        <a href="login/index.php">
-                                            <img decoding="async" src="wp-content/uploads/2023/10/sick.jpeg"
-                                                style="height: 400px; ">
-                                        </a>
-                                    <?php } else { ?>
-                                        <a href="difficulty/index.php?type=sick_fuck">
-                                            <img decoding="async" src="wp-content/uploads/2023/10/sick.jpeg"
-                                                style="height: 400px; ">
-                                        </a> 
-                                  <?php  } ?>
+                                        <?php if ($username == 0) { ?>
+                                            <a href="login/index.php">
+                                                <img decoding="async" src="wp-content/uploads/2023/10/sick.jpeg"
+                                                    style="height: 400px; ">
+                                            </a>
+                                        <?php } else { ?>
+                                            <a href="difficulty/index.php?type=sick_fuck">
+                                                <img decoding="async" src="wp-content/uploads/2023/10/sick.jpeg"
+                                                    style="height: 400px; ">
+                                            </a>
+                                        <?php  } ?>
                                     </div>
                                     <div class="streamers__content">
                                         <h4 class="name">Sick Fuck</h4>
@@ -422,12 +422,128 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
         <script type='text/javascript' src='wp-includes/js/jquery/ui/core.min3f14.js?ver=1.13.2'
             id='jquery-ui-core-js'></script>
         <script id="elementor-frontend-js-before" type="text/javascript">
-            var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false, "isScriptDebug": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "download": "Download", "downloadImage": "Download image", "fullscreen": "Fullscreen", "zoom": "Zoom", "share": "Share", "playVideo": "Play Video", "previous": "Previous", "next": "Next", "close": "Close", "a11yCarouselWrapperAriaLabel": "Carousel | Horizontal scrolling: Arrow Left & Right", "a11yCarouselPrevSlideMessage": "Previous slide", "a11yCarouselNextSlideMessage": "Next slide", "a11yCarouselFirstSlideMessage": "This is the first slide", "a11yCarouselLastSlideMessage": "This is the last slide", "a11yCarouselPaginationBulletMessage": "Go to slide" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "responsive": { "breakpoints": { "mobile": { "label": "Mobile Portrait", "value": 767, "default_value": 767, "direction": "max", "is_enabled": true }, "mobile_extra": { "label": "Mobile Landscape", "value": 880, "default_value": 880, "direction": "max", "is_enabled": false }, "tablet": { "label": "Tablet Portrait", "value": 1024, "default_value": 1024, "direction": "max", "is_enabled": true }, "tablet_extra": { "label": "Tablet Landscape", "value": 1200, "default_value": 1200, "direction": "max", "is_enabled": false }, "laptop": { "label": "Laptop", "value": 1366, "default_value": 1366, "direction": "max", "is_enabled": true }, "widescreen": { "label": "Widescreen", "value": 2400, "default_value": 2400, "direction": "min", "is_enabled": false } } }, "version": "3.17.1", "is_static": false, "experimentalFeatures": { "e_dom_optimization": true, "e_optimized_assets_loading": true, "e_optimized_css_loading": true, "additional_custom_breakpoints": true, "container": true, "e_swiper_latest": true, "landing-pages": true, "e_global_styleguide": true }, "urls": { "assets": "https:\/\/themedox.com\/mykd\/wp-content\/plugins\/elementor\/assets\/" }, "swiperClass": "swiper", "settings": { "page": [], "editorPreferences": [] }, "kit": { "active_breakpoints": ["viewport_mobile", "viewport_tablet", "viewport_laptop"], "lightbox_enable_counter": "yes", "lightbox_enable_fullscreen": "yes", "lightbox_enable_zoom": "yes", "lightbox_enable_share": "yes", "lightbox_title_src": "title", "lightbox_description_src": "description" }, "post": { "id": 415, "title": "About%20Us%20%E2%80%93%20MYKD", "excerpt": "", "featuredImage": false } };
+            var elementorFrontendConfig = {
+                "environmentMode": {
+                    "edit": false,
+                    "wpPreview": false,
+                    "isScriptDebug": false
+                },
+                "i18n": {
+                    "shareOnFacebook": "Share on Facebook",
+                    "shareOnTwitter": "Share on Twitter",
+                    "pinIt": "Pin it",
+                    "download": "Download",
+                    "downloadImage": "Download image",
+                    "fullscreen": "Fullscreen",
+                    "zoom": "Zoom",
+                    "share": "Share",
+                    "playVideo": "Play Video",
+                    "previous": "Previous",
+                    "next": "Next",
+                    "close": "Close",
+                    "a11yCarouselWrapperAriaLabel": "Carousel | Horizontal scrolling: Arrow Left & Right",
+                    "a11yCarouselPrevSlideMessage": "Previous slide",
+                    "a11yCarouselNextSlideMessage": "Next slide",
+                    "a11yCarouselFirstSlideMessage": "This is the first slide",
+                    "a11yCarouselLastSlideMessage": "This is the last slide",
+                    "a11yCarouselPaginationBulletMessage": "Go to slide"
+                },
+                "is_rtl": false,
+                "breakpoints": {
+                    "xs": 0,
+                    "sm": 480,
+                    "md": 768,
+                    "lg": 1025,
+                    "xl": 1440,
+                    "xxl": 1600
+                },
+                "responsive": {
+                    "breakpoints": {
+                        "mobile": {
+                            "label": "Mobile Portrait",
+                            "value": 767,
+                            "default_value": 767,
+                            "direction": "max",
+                            "is_enabled": true
+                        },
+                        "mobile_extra": {
+                            "label": "Mobile Landscape",
+                            "value": 880,
+                            "default_value": 880,
+                            "direction": "max",
+                            "is_enabled": false
+                        },
+                        "tablet": {
+                            "label": "Tablet Portrait",
+                            "value": 1024,
+                            "default_value": 1024,
+                            "direction": "max",
+                            "is_enabled": true
+                        },
+                        "tablet_extra": {
+                            "label": "Tablet Landscape",
+                            "value": 1200,
+                            "default_value": 1200,
+                            "direction": "max",
+                            "is_enabled": false
+                        },
+                        "laptop": {
+                            "label": "Laptop",
+                            "value": 1366,
+                            "default_value": 1366,
+                            "direction": "max",
+                            "is_enabled": true
+                        },
+                        "widescreen": {
+                            "label": "Widescreen",
+                            "value": 2400,
+                            "default_value": 2400,
+                            "direction": "min",
+                            "is_enabled": false
+                        }
+                    }
+                },
+                "version": "3.17.1",
+                "is_static": false,
+                "experimentalFeatures": {
+                    "e_dom_optimization": true,
+                    "e_optimized_assets_loading": true,
+                    "e_optimized_css_loading": true,
+                    "additional_custom_breakpoints": true,
+                    "container": true,
+                    "e_swiper_latest": true,
+                    "landing-pages": true,
+                    "e_global_styleguide": true
+                },
+                "urls": {
+                    "assets": "https:\/\/themedox.com\/mykd\/wp-content\/plugins\/elementor\/assets\/"
+                },
+                "swiperClass": "swiper",
+                "settings": {
+                    "page": [],
+                    "editorPreferences": []
+                },
+                "kit": {
+                    "active_breakpoints": ["viewport_mobile", "viewport_tablet", "viewport_laptop"],
+                    "lightbox_enable_counter": "yes",
+                    "lightbox_enable_fullscreen": "yes",
+                    "lightbox_enable_zoom": "yes",
+                    "lightbox_enable_share": "yes",
+                    "lightbox_title_src": "title",
+                    "lightbox_description_src": "description"
+                },
+                "post": {
+                    "id": 415,
+                    "title": "About%20Us%20%E2%80%93%20MYKD",
+                    "excerpt": "",
+                    "featuredImage": false
+                }
+            };
         </script>
         <script type='text/javascript' src='wp-content/plugins/elementor/assets/js/frontend.min5d63.js?ver=3.17.1'
             id='elementor-frontend-js'></script>
         <script>
-            jQuery(document).ready(function ($) {
+            jQuery(document).ready(function($) {
                 /*===========================================
                     =        Click Sound Active		      =
                 =============================================*/

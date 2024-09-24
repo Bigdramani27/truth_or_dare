@@ -2,6 +2,11 @@
 session_start();
 require ("../controllers/game_controller.php");
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
+$user_id = $_SESSION['user_id'];
+
+$number = check_number_of_points_controller($user_id);
+
+$profile = $_SESSION['profile'];
 ?>
 <!doctype html>
 <html lang="en-US">
@@ -94,7 +99,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                 <div class="logo">
                                     <a class="main-logo" href="index.php">
                                         <img src="../wp-content/themes/mykd/assets/img/logo/logo.png"
-                                            style="max-height: 40px" alt="Logo" />
+                                            style="max-height: 80px" alt="Logo" />
                                     </a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
@@ -190,7 +195,8 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
 
                             <li><a href="tel:+233 548342821">+233 548342821</a></li>
 
-                            <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                           <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                            <li><a href="https://bigdramani27.github.io/My-Profile/">View other projects</a></li>
                         </ul>
                     </div>
                 </div>
@@ -211,7 +217,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
 
 
         <!-- breadcrumb-area -->
-        <section class="breadcrumb-area " data-background="../wp-content/uploads/2023/10/breadcrumb_bg01.jpg">
+        <section class="breadcrumb-area " >
             <div class="container">
                 <div class="breadcrumb__wrapper">
                     <div class="row">
@@ -219,14 +225,14 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                             <div class="breadcrumb__content">
                                 <h2 class="title">Player Details</h2>
                                 <nav aria-label="breadcrumb" class="breadcrumb">
-                                    <span><a class="home"><span>MYKD</span></a>
+                                    <span><a class="home"><span>Fremoria</span></a>
                                     </span> &gt; <span>Player Details</span>
                                 </nav>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-5 position-relative d-none d-lg-block">
                             <div class="breadcrumb__img">
-                                <img src="../wp-content/uploads/2023/10/breadcrumb_team.png" alt="Shape">
+                                <img src="<?php echo $profile?>" alt="Shape">
                             </div>
                         </div>
                     </div>
@@ -277,7 +283,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                                 </div>
                                                 <div class="team__info-content">
                                                     <span class="sub">No. of Points</span>
-                                                    <h5 class="title">04</h5>
+                                                    <h5 class="title"><?php echo $number['overall'] ?? "0"?></h5>
                                                 </div>
                                             </div>
                                         </li>

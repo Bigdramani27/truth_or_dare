@@ -5,6 +5,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
 if($_SESSION['user_role'] != 19){
    header("Location: ../404/");
 }
+$profile = $_SESSION['profile'];
 ?>
 <!doctype html>
 <html lang="en-US">
@@ -45,9 +46,7 @@ if($_SESSION['user_role'] != 19){
         type='text/css' media='all' />
     <link rel='stylesheet' id='mykd-style-css' href='../wp-content/themes/mykd/stylee35d.css?ver=6.3.2' type='text/css'
         media='all' />
-    <link rel='stylesheet' id='google-fonts-1-css'
-        href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CBarlow%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=6.3.2'
-        type='text/css' media='all' />
+
     <link rel='stylesheet' id='elementor-icons-tg-flat-icons-css'
         href='../wp-content/plugins/mykd-core/assets/css/flaticon8a54.css?ver=1.0.0' type='text/css' media='all' />
     <script type='text/javascript' src='../wp-includes/js/jquery/jquery.min3088.js?ver=3.7.0'
@@ -84,7 +83,7 @@ if($_SESSION['user_role'] != 19){
                                 <div class="logo">
                                     <a class="main-logo" href="index.php">
                                         <img src="../wp-content/themes/mykd/assets/img/logo/logo.png"
-                                            style="max-height: 40px" alt="Logo" />
+                                            style="max-height: 80px" alt="Logo" />
                                     </a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
@@ -103,7 +102,7 @@ if($_SESSION['user_role'] != 19){
                                             <a title="Contact" href="../contact-us/index.php"
                                                 class="nav-links">Contact</a>
                                         </li>
-                                        <li class="menu-item nav-item active">
+                                        <li class="menu-item nav-item">
                                             <a title="Donate" href="../donate/index.php" class="nav-links">Donate</a>
                                         </li>
                                     </ul>
@@ -180,7 +179,8 @@ if($_SESSION['user_role'] != 19){
 
                             <li><a href="tel:+233 548342821">+233 548342821</a></li>
 
-                            <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                           <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                            <li><a href="https://bigdramani27.github.io/My-Profile/">View other projects</a></li>
                         </ul>
                     </div>
                 </div>
@@ -208,14 +208,14 @@ if($_SESSION['user_role'] != 19){
                             <div class="breadcrumb__content">
                                 <h2 class="title">Admin</h2>
                                 <nav aria-label="breadcrumb" class="breadcrumb">
-                                    <span><a class="home"><span>MYKD</span></a>
+                                    <span><a class="home"><span>Fremoria</span></a>
                                     </span> &gt; <span>Admin</span>
                                 </nav>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-5 position-relative d-none d-lg-block">
                             <div class="breadcrumb__img">
-                                <img src="../wp-content/themes/mykd/assets/img/others/breadcrumb_img01.png" alt="Shape">
+                                <img src="<?php echo $profile?>" alt="Shape">
                             </div>
                         </div>
                     </div>
@@ -347,50 +347,7 @@ if($_SESSION['user_role'] != 19){
 		});
 	</script>
 
-        <script type='text/javascript'
-            src='../wp-content/plugins/woo-smart-quick-view/assets/libs/magnific-popup/jquery.magnific-popup.min49eb.js?ver=3.5.2'
-            id='magnific-popup-js'></script>
-
-        <script type='text/javascript'
-            src='../wp-content/plugins/woo-smart-quick-view/assets/js/frontend49eb.js?ver=3.5.2'
-            id='woosq-frontend-js'></script>
-        </script>
-        <script type='text/javascript'
-            src='../wp-content/plugins/ti-woocommerce-wishlist/assets/js/public.minf71b.js?ver=2.8.0'
-            id='tinvwl-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/bootstrap.mine35d.js?ver=6.3.2'
-            id='bootstrap-bundle-js'></script>
-        <script type='text/javascript' src='../wp-includes/js/imagesloaded.mineda1.js?ver=4.1.4'
-            id='imagesloaded-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/isotope.pkgd.mine35d.js?ver=6.3.2'
-            id='isotope-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jquery.countdown.mine35d.js?ver=6.3.2'
-            id='countdown-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jquery.waypoints.mine35d.js?ver=6.3.2'
-            id='waypoints-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jquery.odometer.mine35d.js?ver=6.3.2'
-            id='odometer-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/scrollTrigger.mine35d.js?ver=6.3.2'
-            id='scrollTrigger-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jquery.appeare35d.js?ver=6.3.2'
-            id='appear-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jarallax.mine35d.js?ver=6.3.2'
-            id='jarallax-js'></script>
-
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/wow.mine35d.js?ver=6.3.2'
-            id='wow-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/maine35d.js?ver=6.3.2'
-            id='mykd-main-js'></script>
-
-        <script type='text/javascript'
-            src='../wp-content/plugins/elementor/assets/js/webpack.runtime.min5d63.js?ver=3.17.1'
-            id='elementor-webpack-runtime-js'></script>
-        <script type='text/javascript'
-            src='../wp-content/plugins/elementor/assets/js/frontend-modules.min5d63.js?ver=3.17.1'
-            id='elementor-frontend-modules-js'></script>
-        <script type='text/javascript'
-            src='../wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min05da.js?ver=4.0.2'
-            id='elementor-waypoints-js'></script>
+     
 
         <script>
             jQuery(document).ready(function ($) {

@@ -3,16 +3,12 @@ create database game;
 use game;
 
 create table users(
-user_id int not null auto_increment,
+user_id varchar(15) primary key not null,
 username varchar(50) not null,
 email varchar(60) unique not null,
 password varchar(500) not null,
-sick_fuck_point int(255),
-simple_point int(255),
-crazy_point int (255),
-horny_point int(255),
-user_role int (25) not null,
-primary key(user_id)
+user_role int not null,
+profile varchar(255) not null
 );
 
 create table difficulty(
@@ -26,8 +22,8 @@ primary key(difficulty_id)
 
 create table user_game(
  game_start_id int not null auto_increment,
- difficulty_id int not null unique,
- user_id int not null,
+ difficulty_id int not null,
+ user_id varchar(15) not null,
  completed varchar(11) not null,
  primary key(game_start_id),
   foreign key (difficulty_id) references difficulty (difficulty_id),

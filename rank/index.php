@@ -2,6 +2,7 @@
 session_start();
 require ("../controllers/game_controller.php");
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
+$total = check_number_of_points_overall_controller();
 ?>
 <!doctype html>
 <html lang="en-US">
@@ -50,9 +51,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
         type='text/css' media='all' />
     <link rel='stylesheet' id='mykd-unit-css' href='../wp-content/themes/mykd/assets/css/mykd-unite35d.css?ver=6.3.2'
         type='text/css' media='all' />
-    <link rel='stylesheet' id='google-fonts-1-css'
-        href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CBarlow%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=6.3.2'
-        type='text/css' media='all' />
+   
     <link rel='stylesheet' id='elementor-icons-tg-flat-icons-css'
         href='../wp-content/plugins/mykd-core/assets/css/flaticon8a54.css?ver=1.0.0' type='text/css' media='all' />
     <link rel='stylesheet' id='mykd-style-css' href='../wp-content/themes/mykd/stylee35d.css?ver=6.3.2' type='text/css'
@@ -89,7 +88,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                 <div class="logo">
                                     <a class="main-logo" href="index.php">
                                         <img src="../wp-content/themes/mykd/assets/img/logo/logo.png"
-                                            style="max-height: 40px" alt="Logo" />
+                                            style="max-height: 80px" alt="Logo" />
                                     </a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
@@ -185,7 +184,8 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
 
                             <li><a href="tel:+233 548342821">+233 548342821</a></li>
 
-                            <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                           <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                            <li><a href="https://bigdramani27.github.io/My-Profile/">View other projects</a></li>
                         </ul>
                     </div>
                 </div>
@@ -205,7 +205,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
 
 
         <!-- breadcrumb-area -->
-        <section class="breadcrumb-area " data-background="../wp-content/uploads/2023/10/background3.png">
+        <section class="breadcrumb-area " data-background="../wp-content/uploads/2023/10/5.jpg">
             <div class="container">
                 <div class="breadcrumb__wrapper">
                     <div class="row">
@@ -213,7 +213,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                             <div class="breadcrumb__content">
                                 <h2 class="title">Rank</h2>
                                 <nav aria-label="breadcrumb" class="breadcrumb">
-                                    <span><a class="home"><span>MYKD</span></a>
+                                    <span><a class="home"><span>Fremoria</span></a>
                                     </span> &gt; <span>Rank</span>
                                 </nav>
                             </div>
@@ -240,7 +240,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
 
                             <div class="section__title center">
                                 <span class="sub-title tg__animate-text">Top Players</span>
-                                <h2 class="title tg-element-title">play to earn points</h2>
+                                <h2 class="title tg-element-title">The Fastest Top Players</h2>
                             </div>
 
 
@@ -267,7 +267,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                         </svg>
 
                                         <div class="tournament__box-price">
-                                            <i aria-hidden="true" class="fas fa-trophy"></i> <span>25000</span>
+                                            <i aria-hidden="true" class="fas fa-trophy"></i> <span><?php echo $total['total'] ?></span>
                                         </div>
 
                                         <div class="tournament__box-countdown">
@@ -284,42 +284,22 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                         </div>
 
                                         <ul class="tournament__box-list list-wrap">
+                                            <?php $weekly = select_top_3_players_controller();
+                                            foreach ($weekly as $week){
+                                            ?>
                                             <li>
                                                 <div class="tournament__box-list-item">
                                                     <div class="tournament__player-thumb">
                                                         <img decoding="async"
-                                                            src="../wp-content/uploads/2023/10/tournament02.jpg"
+                                                            src="<?php echo $week['profile'] ?>"
                                                             alt="Images">
                                                     </div>
-                                                    <h6 class="tournament__player-name">black ninja</h6>
+                                                    <h6 class="tournament__player-name"><?php echo $week['username'] ?></h6>
                                                     <span class="tournament__player-price">
-                                                        75000 <i aria-hidden="true" class="fas fa-bolt"></i> </span>
+                                                    <?php echo $week['total_points'] ?> <i aria-hidden="true" class="fas fa-bolt"></i> </span>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <div class="tournament__box-list-item">
-                                                    <div class="tournament__player-thumb">
-                                                        <img decoding="async"
-                                                            src="../wp-content/uploads/2023/10/tournament02.jpg"
-                                                            alt="Images">
-                                                    </div>
-                                                    <h6 class="tournament__player-name">Foxtie Max</h6>
-                                                    <span class="tournament__player-price">
-                                                        65000 <i aria-hidden="true" class="fas fa-bolt"></i> </span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="tournament__box-list-item">
-                                                    <div class="tournament__player-thumb">
-                                                        <img decoding="async"
-                                                            src="../wp-content/uploads/2023/10/tournament03.jpg"
-                                                            alt="Images">
-                                                    </div>
-                                                    <h6 class="tournament__player-name">Holam Doxe</h6>
-                                                    <span class="tournament__player-price">
-                                                        55000 <i aria-hidden="true" class="fas fa-bolt"></i> </span>
-                                                </div>
-                                            </li>
+                                          <?php } ?>
                                         </ul>
                                     </div>
 
@@ -345,7 +325,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                         </svg>
 
                                         <div class="tournament__box-price">
-                                            <i aria-hidden="true" class="fas fa-trophy"></i> <span>500K</span>
+                                            <i aria-hidden="true" class="fas fa-trophy"></i> <span><?php echo $total['total'] ?></span>
                                         </div>
 
                                         <div class="tournament__box-countdown">
@@ -364,42 +344,22 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                         </div>
 
                                         <ul class="tournament__box-list list-wrap">
+                                        <?php $overall = select_top_3_players_controller();
+                                            foreach ($overall as $over){
+                                            ?>
                                             <li>
                                                 <div class="tournament__box-list-item">
                                                     <div class="tournament__player-thumb">
                                                         <img decoding="async"
-                                                            src="../wp-content/uploads/2023/10/tournament02.jpg"
+                                                            src="<?php echo $over['profile'] ?>"
                                                             alt="Images">
                                                     </div>
-                                                    <h6 class="tournament__player-name">black ninja</h6>
+                                                    <h6 class="tournament__player-name"><?php echo $over['username'] ?></h6>
                                                     <span class="tournament__player-price">
-                                                        75000 <i aria-hidden="true" class="fas fa-bolt"></i> </span>
+                                                    <?php echo $over['total_points'] ?> <i aria-hidden="true" class="fas fa-bolt"></i> </span>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <div class="tournament__box-list-item">
-                                                    <div class="tournament__player-thumb">
-                                                        <img decoding="async"
-                                                            src="../wp-content/uploads/2023/10/tournament02.jpg"
-                                                            alt="Images">
-                                                    </div>
-                                                    <h6 class="tournament__player-name">Foxtie Max</h6>
-                                                    <span class="tournament__player-price">
-                                                        65000 <i aria-hidden="true" class="fas fa-bolt"></i> </span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="tournament__box-list-item">
-                                                    <div class="tournament__player-thumb">
-                                                        <img decoding="async"
-                                                            src="../wp-content/uploads/2023/10/tournament03.jpg"
-                                                            alt="Images">
-                                                    </div>
-                                                    <h6 class="tournament__player-name">Holam Doxe</h6>
-                                                    <span class="tournament__player-price">
-                                                        55000 <i aria-hidden="true" class="fas fa-bolt"></i> </span>
-                                                </div>
-                                            </li>
+                                            <?php } ?>
                                         </ul>
                                     </div>
 
@@ -426,7 +386,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                         </svg>
 
                                         <div class="tournament__box-price">
-                                            <i aria-hidden="true" class="fas fa-trophy"></i> <span>75000</span>
+                                            <i aria-hidden="true" class="fas fa-trophy"></i> <span><?php echo $total['total'] ?></span>
                                         </div>
 
                                         <div class="tournament__box-countdown">
@@ -444,42 +404,21 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                         </div>
 
                                         <ul class="tournament__box-list list-wrap">
+                                        <?php $month = select_top_3_players_controller();
+                                            foreach ($month as $over){
+                                            ?>
                                             <li>
                                                 <div class="tournament__box-list-item">
                                                     <div class="tournament__player-thumb">
                                                         <img decoding="async"
-                                                            src="../wp-content/uploads/2023/10/tournament02.jpg"
-                                                            alt="Images">
+                                                            src="<?php echo $over['profile'] ?>">
                                                     </div>
-                                                    <h6 class="tournament__player-name">black ninja</h6>
+                                                    <h6 class="tournament__player-name"><?php echo $over['username'] ?></h6>
                                                     <span class="tournament__player-price">
-                                                        75000 <i aria-hidden="true" class="fas fa-bolt"></i> </span>
+                                                    <?php echo $over['total_points'] ?> <i aria-hidden="true" class="fas fa-bolt"></i> </span>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <div class="tournament__box-list-item">
-                                                    <div class="tournament__player-thumb">
-                                                        <img decoding="async"
-                                                            src="../wp-content/uploads/2023/10/tournament02.jpg"
-                                                            alt="Images">
-                                                    </div>
-                                                    <h6 class="tournament__player-name">Foxtie Max</h6>
-                                                    <span class="tournament__player-price">
-                                                        65000 <i aria-hidden="true" class="fas fa-bolt"></i> </span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="tournament__box-list-item">
-                                                    <div class="tournament__player-thumb">
-                                                        <img decoding="async"
-                                                            src="../wp-content/uploads/2023/10/tournament03.jpg"
-                                                            alt="Images">
-                                                    </div>
-                                                    <h6 class="tournament__player-name">Holam Doxe</h6>
-                                                    <span class="tournament__player-price">
-                                                        55000 <i aria-hidden="true" class="fas fa-bolt"></i> </span>
-                                                </div>
-                                            </li>
+                                            <?php } ?>
                                         </ul>
                                     </div>
 

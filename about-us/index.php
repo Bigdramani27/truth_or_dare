@@ -43,10 +43,6 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
         type='text/css' media='all' />
     <link rel='stylesheet' id='mykd-unit-css' href='../wp-content/themes/mykd/assets/css/mykd-unite35d.css?ver=6.3.2'
         type='text/css' media='all' />
-
-    <link rel='stylesheet' id='google-fonts-1-css'
-        href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CBarlow%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=6.3.2'
-        type='text/css' media='all' />
     <link rel='stylesheet' id='elementor-icons-tg-flat-icons-css'
         href='../wp-content/plugins/mykd-core/assets/css/flaticon8a54.css?ver=1.0.0' type='text/css' media='all' />
     <script type='text/javascript' src='../wp-includes/js/jquery/jquery.min3088.js?ver=3.7.0'
@@ -77,7 +73,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                 <div class="logo">
                                     <a class="main-logo" href="index.php">
                                         <img src="../wp-content/themes/mykd/assets/img/logo/logo.png"
-                                            style="max-height: 40px" alt="Logo" />
+                                            style="max-height: 80px" alt="Logo" />
                                     </a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
@@ -173,7 +169,8 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
 
                             <li><a href="tel:+233 548342821">+233 548342821</a></li>
 
-                            <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                           <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                            <li><a href="https://bigdramani27.github.io/My-Profile/">View other projects</a></li>
                         </ul>
                     </div>
                 </div>
@@ -202,7 +199,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                             <div class="breadcrumb__content">
                                 <h2 class="title">About Us</h2>
                                 <nav aria-label="breadcrumb" class="breadcrumb">
-                                    <span><a class="home"><span>MYKD</span></a>
+                                    <span><a class="home"><span>Fremoria</span></a>
                                     </span> &gt; <span>About Us</span>
                                 </nav>
                             </div>
@@ -361,7 +358,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                     <div class="team__item">
                                         <div class="team__thumb">
                                             <a href="../player-details/index.php">
-                                                <img decoding="async" src="../wp-content/uploads/2023/10/team01.png"
+                                                <img decoding="async" src="../wp-content/uploads/2023/10/team02.png"
                                                     alt="">
                                             </a>
                                         </div>
@@ -391,7 +388,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                     <div class="team__item">
                                         <div class="team__thumb">
                                             <a href="../player-details/index.php">
-                                                <img decoding="async" src="../wp-content/uploads/2023/10/team03.png"
+                                                <img decoding="async" src="../wp-content/uploads/2023/10/team02.png"
                                                     alt="">
                                             </a>
                                         </div>

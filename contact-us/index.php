@@ -90,7 +90,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
 								<div class="logo">
 									<a class="main-logo" href="index.php">
 										<img src="../wp-content/themes/mykd/assets/img/logo/logo.png"
-											style="max-height: 40px" alt="Logo" />
+											style="max-height: 80px" alt="Logo" />
 									</a>
 								</div>
 								<div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
@@ -215,7 +215,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
 							<div class="breadcrumb__content">
 								<h2 class="title">Contact Us</h2>
 								<nav aria-label="breadcrumb" class="breadcrumb">
-									<span><a class="home"><span>MYKD</span></a>
+									<span><a class="home"><span>Fremoria</span></a>
 									</span> &gt; <span>Contact Us</span>
 								</nav>
 							</div>
@@ -353,9 +353,6 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
 			src='../wp-content/plugins/woo-smart-quick-view/assets/js/frontend49eb.js?ver=3.5.2'
 			id='woosq-frontend-js'></script>
 		</script>
-		<script type='text/javascript'
-			src='../wp-content/plugins/ti-woocommerce-wishlist/assets/js/public.minf71b.js?ver=2.8.0'
-			id='tinvwl-js'></script>
 		<script type='text/javascript' src='../wp-content/themes/mykd/assets/js/bootstrap.mine35d.js?ver=6.3.2'
 			id='bootstrap-bundle-js'></script>
 		<script type='text/javascript' src='../wp-includes/js/imagesloaded.mineda1.js?ver=4.1.4'

@@ -19,13 +19,11 @@ if ($customer == NULL) {
         $_SESSION['username'] = $customer['username'];
         $_SESSION['user_role'] = $customer['user_role'];
         $_SESSION['user_id'] = $customer['user_id'];
+        $_SESSION['profile'] = $customer['profile'];
         $_SESSION['pass'] = $password;
         // check if the user is a user
         if ($_SESSION['user_role'] == 31) {
-            $select = select_all_task_controller();
-            foreach ($select as $pick){
-                $add= add_game_task_to_user_controller($pick['difficulty_id'], $customer['user_id'], "No");
-            }
+          
           
             $response = array('success' => true, 'message' => '../index.php');
             echo json_encode($response);

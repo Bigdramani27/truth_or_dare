@@ -18,7 +18,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <title>Reset Password &#8211; MYKD</title>
+    <title>Reset Password</title>
     <link rel='stylesheet' id='hfe-style-css'
         href='../../wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor8ff8.css?ver=1.6.21'
         type='text/css' media='all' />
@@ -57,15 +57,15 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
         type='text/css' media='all' />
     <link rel='stylesheet' id='mykd-style-css' href='../../wp-content/themes/mykd/stylee35d.css?ver=6.3.2'
         type='text/css' media='all' />
-    <link rel='stylesheet' id='google-fonts-1-css'
-        href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CBarlow%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=6.3.2'
-        type='text/css' media='all' />
+
     <link rel='stylesheet' id='elementor-icons-tg-flat-icons-css'
         href='../../wp-content/plugins/mykd-core/assets/css/flaticon8a54.css?ver=1.0.0' type='text/css' media='all' />
     <script type='text/javascript' src='../../wp-includes/js/jquery/jquery.min3088.js?ver=3.7.0'
         id='jquery-core-js'></script>
     <script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min5589.js?ver=3.4.1'
         id='jquery-migrate-js'></script>
+        <link rel='stylesheet' id='font-awesome-free-css'
+		href='../../wp-content/themes/mykd/assets/css/fontawesome-all.mine35d.css?ver=6.3.2' type='text/css' media='all' />
 
 </head>
 
@@ -90,7 +90,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
                                 <div class="logo">
                                     <a class="main-logo" href="index.php">
                                         <img src="../../wp-content/themes/mykd/assets/img/logo/logo.png"
-                                            style="max-height: 40px" alt="Logo" />
+                                            style="max-height: 80px" alt="Logo" />
                                     </a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
@@ -181,7 +181,8 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
 
                             <li><a href="tel:+233 548342821">+233 548342821</a></li>
 
-                            <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                           <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                            <li><a href="https://bigdramani27.github.io/My-Profile/">View other projects</a></li>
                         </ul>
                     </div>
                 </div>
@@ -211,7 +212,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
                             <div class="breadcrumb__content">
                                 <h2 class="title">Reset Password</h2>
                                 <nav aria-label="breadcrumb" class="breadcrumb">
-                                    <span><a class="home"><span>MYKD</span></a>
+                                    <span><a class="home"><span>Fremoria</span></a>
                                     </span> &gt; <span>Reset Password</span>
                                 </nav>
                             </div>
@@ -246,7 +247,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
 
                                                     <p
                                                         class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
-                                                        <label for="user_login">Password</label>
+                                                        <label for="user_login">Password <i class="fa fa-eye" style='color:#25a56a; font-size:18px' id="loginToggle"></i><</label>
                                                         <input class="woocommerce-Input woocommerce-Input--text input-text"
                                                             type="password"  name='password' id='password' required />
                                                     </p>
@@ -303,6 +304,18 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
         </div><!-- #page -->
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+		const togglePassword = document.querySelector('#resetPassword');
+		const password = document.querySelector('#password');
+
+		togglePassword.addEventListener('click', function(e) {
+			// toggle the type attribute
+			const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+			password.setAttribute('type', type);
+			// toggle the eye slash icon
+			this.classList.toggle('fa-eye-slash');
+		});
+	</script>
         <script>
             $(document).ready(function() {
                 $('#reset').submit(function(event) {

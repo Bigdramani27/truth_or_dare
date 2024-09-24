@@ -1,12 +1,12 @@
 <?php
 session_start();
-require ("../controllers/game_controller.php");
+require("../controllers/game_controller.php");
 $customer_id = isset($_SESSION['customer_id']) ? $_SESSION['customer_id'] : "0";
 
 $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
- if($pass == true ){
- header('Location: ../index.php');
- }
+if ($pass == true) {
+    header('Location: ../index.php');
+}
 ?>
 
 <!doctype html>
@@ -16,7 +16,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <title>Login &#8211; MYKD</title>
+    <title>Login</title>
 
     <link rel='stylesheet' id='select2-css' href='../wp-content/plugins/woocommerce/assets/css/select2ee31.css?ver=8.2.1' type='text/css' media='all' />
     <link rel='stylesheet' id='woocommerce-layout-css' href='../wp-content/plugins/woocommerce/assets/css/woocommerce-layoutee31.css?ver=8.2.1' type='text/css' media='all' />
@@ -47,6 +47,8 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
     <script type='text/javascript' src='../wp-includes/js/jquery/jquery.min3088.js?ver=3.7.0' id='jquery-core-js'></script>
     <script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min5589.js?ver=3.4.1' id='jquery-migrate-js'></script>
     <link rel='stylesheet' id='mykd-unit-css' href='../wp-content/themes/mykd/assets/css/mykd-unite35d.css?ver=6.3.2' type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesome-free-css'
+        href='../wp-content/themes/mykd/assets/css/fontawesome-all.mine35d.css?ver=6.3.2' type='text/css' media='all' />
 
     <link rel="icon" href="../wp-content/uploads/2023/10/favicon.png" sizes="32x32" />
     <link rel="icon" href="../wp-content/uploads/2023/10/favicon.png" sizes="192x192" />
@@ -73,7 +75,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
                             <nav class="tgmenu__nav">
                                 <div class="logo">
                                     <a class="main-logo" href="index.php">
-                                        <img src="../wp-content/themes/mykd/assets/img/logo/logo.png" style="max-height: 40px" alt="Logo" />
+                                        <img src="../wp-content/themes/mykd/assets/img/logo/logo.png" style="max-height: 80px" alt="Logo" />
                                     </a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
@@ -124,7 +126,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
                 <div class="close-btn"><i class="flaticon-swords-in-cross-arrangement"></i></div>
                 <div class="nav-logo">
                     <a class="main-logo" href="index.php">
-                        <img src="../wp-content/themes/mykd/assets/img/logo/logo.png" style="max-height: 40px" alt="Logo" />
+                        <img src="../wp-content/themes/mykd/assets/img/logo/logo.png" style="max-height: 80px" alt="Logo" />
                     </a>
                 </div>
 
@@ -143,7 +145,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
                 <div class="offCanvas__top">
                     <div class="offCanvas__logo logo">
                         <a class="main-logo" href="index.php">
-                            <img src="../wp-content/themes/mykd/assets/img/logo/logo.png" style="max-height: 40px" alt="Logo" />
+                            <img src="../wp-content/themes/mykd/assets/img/logo/logo.png" style="max-height: 80px" alt="Logo" />
                         </a>
                     </div>
                     <div class="offCanvas__toggle">
@@ -160,6 +162,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
                             <li><a href="tel:+233 548342821">+233 548342821</a></li>
 
                             <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                            <li><a href="https://bigdramani27.github.io/My-Profile/">View other projects</a></li>
                         </ul>
                     </div>
                 </div>
@@ -187,7 +190,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
                             <div class="breadcrumb__content">
                                 <h2 class="title">Login</h2>
                                 <nav aria-label="breadcrumb" class="breadcrumb">
-                                    <span><a class="home"><span>MYKD</span></a>
+                                    <span><a class="home"><span>Fremoria</span></a>
                                     </span> &gt; <span>Login / Register</span>
                                 </nav>
                             </div>
@@ -214,21 +217,28 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
                                     <div class="woocommerce-notices-wrapper"></div>
                                     <div class="row justify-content-center" id="customer_login">
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6" style="margin-top: 10px;">
                                             <div class="tg-woo-form-wrap tg-woo-form-login">
                                                 <h2>Login</h2>
                                                 <form class="woocommerce-form woocommerce-form-login login" id='logins'>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                                <label>Username or Email&nbsp;<span style="color:red">*</span></label>
+                                                                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" required />
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                                                                <label for="password">Password&nbsp;<span style="color:red">* <i class="fa fa-eye" style='color:#25a56a; font-size:18px' id="loginToggle"></i></span></label>
+                                                                <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" id='passwords' name="password" required />
+                                                            </p>
+                                                        </div>
+                                                    </div>
 
-
-                                                    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                                                        <label>Username or Email&nbsp;<span style="color:red">*</span></label>
-                                                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" required />
+                                                    <p class="woocommerce-LostPassword lost_password" style="margin-bottom: 10px;">
+                                                        <a href="forgot-password/index.php">Forgot your password?</a>
                                                     </p>
-                                                    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                                                        <label for="password">Password&nbsp;<span style="color:red">*</span></label>
-                                                        <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" required />
-                                                    </p>
-
 
                                                     <p class="form-row">
                                                         <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
@@ -237,9 +247,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
                                                         <span class="d-block"></span>
                                                         <button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="Log in">Log in</button>
                                                     </p>
-                                                    <p class="woocommerce-LostPassword lost_password">
-                                                        <a href="forgot-password/index.php">Forgot your password?</a>
-                                                    </p>
+
 
 
                                                 </form>
@@ -247,7 +255,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
                                         </div>
 
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6" style="margin-top: 10px;">
                                             <div class="tg-woo-form-wrap tg-woo-form-register">
                                                 <h2>Register</h2>
                                                 <form id='register'>
@@ -255,7 +263,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
                                                         <div class="col-lg-6">
                                                             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                                                                 <label for="reg_email">Username&nbsp;<span style="color:red">*</span></label>
-                                                                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" required  maxlength="13"/>
+                                                                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" required maxlength="13" />
                                                             </p>
                                                         </div>
                                                         <div class="col-lg-6">
@@ -266,7 +274,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                                                                <label for="reg_email">Password&nbsp;<span style="color:red">*</span></label>
+                                                                <label for="reg_email">Password&nbsp;<span style="color:red">* <i class="fa fa-eye" style='color:#25a56a; font-size:18px' id="togglePassword"></i></span></label>
                                                                 <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="password" required />
                                                             </p>
                                                             <div id="password-requirements" style="display: none;">
@@ -323,35 +331,51 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
             </div>
         </footer>
         </div><!-- #page -->
-        <script type='text/javascript' src='../wp-content/plugins/woo-smart-quick-view/assets/js/frontend49eb.js?ver=3.5.2' id='woosq-frontend-js'></script>
+
+        <script type='text/javascript'
+            src='../wp-content/plugins/woo-smart-quick-view/assets/libs/magnific-popup/jquery.magnific-popup.min49eb.js?ver=3.5.2'
+            id='magnific-popup-js'></script>
+
+        <script type='text/javascript'
+            src='../wp-content/plugins/woo-smart-quick-view/assets/js/frontend49eb.js?ver=3.5.2'
+            id='woosq-frontend-js'></script>
         </script>
+        <script type='text/javascript'
+            src='../wp-content/plugins/ti-woocommerce-wishlist/assets/js/public.minf71b.js?ver=2.8.0'
+            id='tinvwl-js'></script>
+        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/bootstrap.mine35d.js?ver=6.3.2'
+            id='bootstrap-bundle-js'></script>
+        <script type='text/javascript' src='../wp-includes/js/imagesloaded.mineda1.js?ver=4.1.4'
+            id='imagesloaded-js'></script>
+        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/isotope.pkgd.mine35d.js?ver=6.3.2'
+            id='isotope-js'></script>
+        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jquery.countdown.mine35d.js?ver=6.3.2'
+            id='countdown-js'></script>
+        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jquery.waypoints.mine35d.js?ver=6.3.2'
+            id='waypoints-js'></script>
+        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jquery.odometer.mine35d.js?ver=6.3.2'
+            id='odometer-js'></script>
+        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/scrollTrigger.mine35d.js?ver=6.3.2'
+            id='scrollTrigger-js'></script>
+        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jquery.appeare35d.js?ver=6.3.2'
+            id='appear-js'></script>
+        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jarallax.mine35d.js?ver=6.3.2'
+            id='jarallax-js'></script>
 
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/bootstrap.mine35d.js?ver=6.3.2' id='bootstrap-bundle-js'></script>
-        <script type='text/javascript' src='../wp-includes/js/imagesloaded.mineda1.js?ver=4.1.4' id='imagesloaded-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/isotope.pkgd.mine35d.js?ver=6.3.2' id='isotope-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jquery.countdown.mine35d.js?ver=6.3.2' id='countdown-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jquery.waypoints.mine35d.js?ver=6.3.2' id='waypoints-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jquery.odometer.mine35d.js?ver=6.3.2' id='odometer-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/scrollTrigger.mine35d.js?ver=6.3.2' id='scrollTrigger-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jquery.appeare35d.js?ver=6.3.2' id='appear-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/jarallax.mine35d.js?ver=6.3.2' id='jarallax-js'></script>
+        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/wow.mine35d.js?ver=6.3.2'
+            id='wow-js'></script>
+        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/maine35d.js?ver=6.3.2'
+            id='mykd-main-js'></script>
 
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/wow.mine35d.js?ver=6.3.2' id='wow-js'></script>
-        <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/maine35d.js?ver=6.3.2' id='mykd-main-js'></script>
-
-        <script type='text/javascript' src='../wp-content/plugins/elementor/assets/js/webpack.runtime.min5d63.js?ver=3.17.1' id='elementor-webpack-runtime-js'></script>
-        <script type='text/javascript' src='../wp-content/plugins/elementor/assets/js/frontend-modules.min5d63.js?ver=3.17.1' id='elementor-frontend-modules-js'></script>
-        <script type='text/javascript' src='../wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min05da.js?ver=4.0.2' id='elementor-waypoints-js'></script>
-
-
-
-        <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.minfb9f.js?ver=2.1.4-wc.8.2.1' id='js-cookie-js'></script>
-
-        <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.minee31.js?ver=8.2.1' id='woocommerce-js'></script>
-
-
-
-
+        <script type='text/javascript'
+            src='../wp-content/plugins/elementor/assets/js/webpack.runtime.min5d63.js?ver=3.17.1'
+            id='elementor-webpack-runtime-js'></script>
+        <script type='text/javascript'
+            src='../wp-content/plugins/elementor/assets/js/frontend-modules.min5d63.js?ver=3.17.1'
+            id='elementor-frontend-modules-js'></script>
+        <script type='text/javascript'
+            src='../wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min05da.js?ver=4.0.2'
+            id='elementor-waypoints-js'></script>
 
 
         <script>
@@ -366,34 +390,56 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
-		$(document).ready(function() {
-			$('#logins').submit(function(event) {
-				event.preventDefault();
-				$.ajax({
-					type: 'POST',
-					url: '../action/login_process.php',
-					dataType: 'json',
-					data: $(this).serialize(),
-					success: function(response) {
-						if (response.success) {
-							window.location.href =  response.message;
-						} else {
-							Swal.fire('Error!', response.message, 'error');
-							document.getElementById("password").value = ""
+		const togglePassword = document.querySelector('#loginToggle');
+		const password = document.querySelector('#passwords');
 
-						}
-					},
-					error: function() {
-						Swal.fire({
-							title: 'Oops!',
-							text: 'Something went wrong, please try again later',
-							icon: 'error',
-						});
-					}
-				});
-			});
+		togglePassword.addEventListener('click', function(e) {
+			// toggle the type attribute
+			const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+			password.setAttribute('type', type);
+			// toggle the eye slash icon
+			this.classList.toggle('fa-eye-slash');
+		});
+		const togglePasswords = document.querySelector('#togglePassword');
+		const passwords = document.querySelector('#password');
+
+		togglePasswords.addEventListener('click', function(e) {
+			// toggle the type attribute
+			const type = passwords.getAttribute('type') === 'password' ? 'text' : 'password';
+			passwords.setAttribute('type', type);
+			// toggle the eye slash icon
+			this.classList.toggle('fa-eye-slash');
 		});
 	</script>
+        <script>
+            $(document).ready(function() {
+                $('#logins').submit(function(event) {
+                    event.preventDefault();
+                    $.ajax({
+                        type: 'POST',
+                        url: '../action/login_process.php',
+                        dataType: 'json',
+                        data: $(this).serialize(),
+                        success: function(response) {
+                            if (response.success) {
+                                window.location.href = response.message;
+                            } else {
+                                Swal.fire('Error!', response.message, 'error');
+                                document.getElementById("password").value = ""
+
+                            }
+                        },
+                        error: function() {
+                            Swal.fire({
+                                title: 'Oops!',
+                                text: 'Something went wrong, please try again later',
+                                icon: 'error',
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
         <script>
             $(document).ready(function() {
                 $('#register').submit(function(event) {
@@ -426,7 +472,7 @@ $pass = isset($_SESSION['pass'])  ? $_SESSION['pass'] : "";
                     });
                 });
             });
-          
+
             // Function to check password requirements
             function checkPassword() {
                 var password = document.getElementById("password").value;

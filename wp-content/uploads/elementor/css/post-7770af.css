@@ -1,17 +1,4 @@
-.elementor-77 .elementor-element.elementor-element-936eda5 {
-  --display: flex;
-  --flex-direction: column;
-  --container-widget-width: 100%;
-  --container-widget-height: initial;
-  --container-widget-flex-grow: 0;
-  --container-widget-align-self: initial;
-  --gap: 0px 0px;
-  --background-transition: 0.3s;
-  --padding-block-start: 158px;
-  --padding-block-end: 54px;
-  --padding-inline-start: 0px;
-  --padding-inline-end: 0px;
-}
+
 .elementor-77
   .elementor-element.elementor-element-936eda5:not(
     .elementor-motion-effects-element-type-background

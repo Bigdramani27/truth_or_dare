@@ -1847,19 +1847,19 @@
         return o.promise();
       },
     });
-  var H = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;
-  (ce.Deferred.exceptionHook = function (e, t) {
-    ie.console &&
-      ie.console.warn &&
-      e &&
-      H.test(e.name) &&
-      ie.console.warn("jQuery.Deferred exception: " + e.message, e.stack, t);
-  }),
-    (ce.readyException = function (e) {
-      ie.setTimeout(function () {
-        throw e;
-      });
-    });
+  // var H = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;
+  // (ce.Deferred.exceptionHook = function (e, t) {
+  //   ie.console &&
+  //     ie.console.warn &&
+  //     e &&
+  //     H.test(e.name) &&
+  //     ie.console.warn("jQuery.Deferred exception: " + e.message, e.stack, t);
+  // }),
+  //   (ce.readyException = function (e) {
+  //     ie.setTimeout(function () {
+  //       throw e;
+  //     });
+  //   });
   var O = ce.Deferred();
   function P() {
     C.removeEventListener("DOMContentLoaded", P),

@@ -71,7 +71,7 @@ EOT;
 $mail = new PHPMailer(true);
 $mail->SMTPDebug = 3;
 $mail->IsSMTP();
-$mail->addEmbeddedImage('../wp-content/uploads/2023/10/1.jpg', 'profile');
+$mail->addEmbeddedImage('../wp-content/themes/mykd/assets/img/logo/logo.png', 'profile');
 $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
 $mail->SMTPAuth   = true;
 $mail->SMTPSecure = 'tls';

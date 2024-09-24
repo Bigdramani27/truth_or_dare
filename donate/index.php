@@ -1,6 +1,6 @@
-<?php 
+<?php
 session_start();
-require ("../controllers/game_controller.php");
+require("../controllers/game_controller.php");
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
 ?>
 <!doctype html>
@@ -42,22 +42,21 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
         type='text/css' media='all' />
     <link rel='stylesheet' id='mykd-style-css' href='../wp-content/themes/mykd/stylee35d.css?ver=6.3.2' type='text/css'
         media='all' />
-    <link rel='stylesheet' id='google-fonts-1-css'
-        href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CBarlow%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPoppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=6.3.2'
-        type='text/css' media='all' />
+
     <link rel='stylesheet' id='elementor-icons-tg-flat-icons-css'
         href='../wp-content/plugins/mykd-core/assets/css/flaticon8a54.css?ver=1.0.0' type='text/css' media='all' />
     <script type='text/javascript' src='../wp-includes/js/jquery/jquery.min3088.js?ver=3.7.0'
         id='jquery-core-js'></script>
     <script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min5589.js?ver=3.4.1'
         id='jquery-migrate-js'></script>
+    <link rel='stylesheet' id='font-awesome-free-css'
+        href='../wp-content/themes/mykd/assets/css/fontawesome-all.mine35d.css?ver=6.3.2' type='text/css' media='all' />
 
 
 
     <link rel="icon" href="../wp-content/uploads/2023/10/favicon.png" sizes="32x32" />
     <link rel="icon" href="../wp-content/uploads/2023/10/favicon.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="../wp-content/uploads/2023/10/favicon.png" />
-    <meta name="msapplication-TileImage" content="https://themedox.com/mykd/wp-content/uploads/2023/10/favicon.png" />
 </head>
 
 <body>
@@ -81,7 +80,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                 <div class="logo">
                                     <a class="main-logo" href="index.php">
                                         <img src="../wp-content/themes/mykd/assets/img/logo/logo.png"
-                                            style="max-height: 40px" alt="Logo" />
+                                            style="max-height: 80px" alt="Logo" />
                                     </a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
@@ -106,18 +105,18 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action d-none d-md-block">
-                                <ul class="list-wrap">
-                                        <?php if($username == 0){ ?>
-                                        <li class="header-btn">
-                                            <a href="../login/index.php" class="tg-border-btn">
-                                                <i class="flaticon-edit"></i> ~Login </a>
-                                        </li>
+                                    <ul class="list-wrap">
+                                        <?php if ($username == 0) { ?>
+                                            <li class="header-btn">
+                                                <a href="../login/index.php" class="tg-border-btn">
+                                                    <i class="flaticon-edit"></i> ~Login </a>
+                                            </li>
                                         <?php } else { ?>
                                             <li class="header-btn">
-                                            <a href="../player-details/index.php" class="tg-border-btn">
-                                                <i class="flaticon-edit"></i> <?php echo $_SESSION['username']?> </a>
+                                                <a href="../player-details/index.php" class="tg-border-btn">
+                                                    <i class="flaticon-edit"></i> <?php echo $_SESSION['username'] ?> </a>
                                             </li>
-                                       <?php } ?>
+                                        <?php } ?>
                                         <li class="side-toggle-icon">
                                             <span></span>
                                             <span></span>
@@ -178,6 +177,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                             <li><a href="tel:+233 548342821">+233 548342821</a></li>
 
                             <li><a href="mailto:info@webmail.com">a.dramani@aisghana.org</a></li>
+                            <li><a href="https://bigdramani27.github.io/My-Profile/">View other projects</a></li>
                         </ul>
                     </div>
                 </div>
@@ -205,7 +205,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                             <div class="breadcrumb__content">
                                 <h2 class="title">Donate</h2>
                                 <nav aria-label="breadcrumb" class="breadcrumb">
-                                    <span><a class="home"><span>MYKD</span></a>
+                                    <span><a class="home"><span>Fremoria</span></a>
                                     </span> &gt; <span>Donate</span>
                                 </nav>
                             </div>
@@ -235,8 +235,8 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                         <div class="col-lg-6">
                                             <div class="tg-woo-form-wrap tg-woo-form-login">
                                                 <h2>Help fund this project!</h2>
-                                                <form class="" method="post">
-
+                                                <form id='paymentForms'>
+                                                    <input type="hidden" id='email' name='email' value='fremoria@donation.com'>
 
                                                     <p
                                                         class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
@@ -250,7 +250,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
                                                         class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                                                         <label>Amount&nbsp;<span style="color:red">*</span></label>
                                                         <input class="woocommerce-Input input-text" type="number"
-                                                            name="amount" />
+                                                            name="amount" id='amount' />
                                                     </p>
 
                                                     <p class="form-row">
@@ -289,8 +289,114 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
             </div>
         </footer>
         </div><!-- #page -->
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://js.paystack.co/v1/inline.js"></script>
+        <script>
+            const paymentForm = document.getElementById('paymentForms');
+            paymentForm.addEventListener("submit", payWithPaystack, false);
 
+            // PAYMENT FUNCTION
+            function payWithPaystack(e) {
+                e.preventDefault();
+                let handler = PaystackPop.setup({
+                    key: 'pk_test_9a66f0be5bdc776def0d8776416b637dc1060720', // Replace with your public key
+                    email: document.getElementById("email").value,
+                    amount: document.getElementById("amount").value * 100,
+                    currency: 'GHS',
+                    onClose: function() {
+                        Swal.fire({
+                            title: 'Cancellation!',
+                            text: 'You are choosing to stop placing your order!',
+                            icon: 'warning',
+                            button: 'OK'
+                        })
+                    },
+                    callback: function(response) {
+                        Swal.fire({
+                            title: 'Please Wait!',
+                            html: 'Payment processing...',
+                            allowOutsideClick: false,
+                            showConfirmButton: false,
+                            willOpen: () => {
+                                Swal.showLoading();
+                            },
+                        });
 
+                        // AJAX request to your donate.php script
+                        fetch(`../action/donate.php?reference=${response.reference}`)
+                            .then(res => res.json())
+                            .then(data => {
+                                Swal.close(); // Close the loading alert
+
+                                // Show the result alert
+                                Swal.fire({
+                                    title: data.success ? 'Success!' : 'Error!',
+                                    text: data.message,
+                                    icon: data.success ? 'success' : 'error',
+                                    confirmButtonText: 'OK'
+                                });
+
+                                // Optionally, redirect or perform other actions based on success
+                                if (data.success) {
+                                    // Redirect or perform other actions here if needed
+                                }
+                            })
+                            .catch(err => {
+                                Swal.close(); // Close loading alert on error
+                                Swal.fire({
+                                    title: 'Error!',
+                                    text: 'An error occurred while processing your request.',
+                                    icon: 'error',
+                                    confirmButtonText: 'OK'
+                                });
+                            });
+                    }
+
+                });
+                handler.openIframe();
+            }
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('#donation').submit(function(event) {
+                    event.preventDefault();
+                    Swal.fire({
+                        title: 'Please wait...',
+                        html: 'Sending Message',
+                        showConfirmButton: false,
+                        allowEscapeKey: false,
+                        allowOutsideClick: false,
+                        willOpen: () => {
+                            Swal.showLoading()
+                        },
+                    });
+                    $.ajax({
+                        type: 'POST',
+                        url: '../action/donate.php',
+                        dataType: 'json',
+                        data: $(this).serialize(),
+                        success: function(response) {
+
+                            // Show success sweet alert
+                            Swal.fire('Success!', "Thank you for your donation! We won't forget your kindness.", 'success').then((result) => {
+                                // Reload the Page
+                                location.reload();
+                            });
+
+                        },
+                        error: function() {
+                            // Show error sweet alert
+                            Swal.fire({
+                                title: 'Oops!',
+                                text: 'Something went wrong, please try again later',
+                                icon: 'error',
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
 
         <script type='text/javascript'
             src='../wp-content/plugins/woo-smart-quick-view/assets/libs/magnific-popup/jquery.magnific-popup.min49eb.js?ver=3.5.2'
@@ -300,9 +406,6 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
             src='../wp-content/plugins/woo-smart-quick-view/assets/js/frontend49eb.js?ver=3.5.2'
             id='woosq-frontend-js'></script>
         </script>
-        <script type='text/javascript'
-            src='../wp-content/plugins/ti-woocommerce-wishlist/assets/js/public.minf71b.js?ver=2.8.0'
-            id='tinvwl-js'></script>
         <script type='text/javascript' src='../wp-content/themes/mykd/assets/js/bootstrap.mine35d.js?ver=6.3.2'
             id='bootstrap-bundle-js'></script>
         <script type='text/javascript' src='../wp-includes/js/imagesloaded.mineda1.js?ver=4.1.4'
@@ -337,8 +440,10 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : "0";
             src='../wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min05da.js?ver=4.0.2'
             id='elementor-waypoints-js'></script>
 
+
+
         <script>
-            jQuery(document).ready(function ($) {
+            jQuery(document).ready(function($) {
                 /*===========================================
                     =        Click Sound Active		      =
                 =============================================*/

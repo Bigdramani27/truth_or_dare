@@ -52,8 +52,8 @@ function preloader() {
 
 $(window).on('load', function () {
 	preloader();
-    mainSlider();
-	wowAnimation();
+    //mainSlider();
+	//wowAnimation();
 });
 
 
@@ -193,25 +193,25 @@ $('.offCanvas__overlay, .offCanvas__toggle').on('click', function () {
 /*=============================================
 	=        Third Slider Active		      =
 =============================================*/
-function mainSlider() {
-	$('.slider-active').slick({
-		autoplay: false,
-		autoplaySpeed: 10000,
-		dots: false,
-		fade: true,
-		arrows: false,
-		responsive: [
-			{
-                breakpoint: 767,
-                settings: {
-                    dots: false,
-                    arrows: false
-                }
-            },
-		]
-	})
-	.slickAnimation();
-}
+// function mainSlider() {
+// 	$('.slider-active').slick({
+// 		autoplay: false,
+// 		autoplaySpeed: 10000,
+// 		dots: false,
+// 		fade: true,
+// 		arrows: false,
+// 		responsive: [
+// 			{
+//                 breakpoint: 767,
+//                 settings: {
+//                     dots: false,
+//                     arrows: false
+//                 }
+//             },
+// 		]
+// 	})
+// 	.slickAnimation();
+// }
 
 
 /*=============================================
@@ -430,30 +430,21 @@ function splitText() {
 /*===========================================
 	=         Isotope Active     =
 =============================================*/
-$('.shop-grid-activee').imagesLoaded(function () {
-	// init Isotope
-	var $grid = $('.shop-grid-activee').isotope({
-		itemSelector: '.grid-item',
-		percentPosition: true,
-		masonry: {
-			columnWidth: '.grid-sizer',
-		}
-	});
-});
+
 
 /*=============================================
 	=    		 Wow Active  	         =
 =============================================*/
-function wowAnimation() {
-	var wow = new WOW({
-		boxClass: 'wow',
-		animateClass: 'animated',
-		offset: 0,
-		mobile: false,
-		live: true
-	});
-	wow.init();
-}
+// function wowAnimation() {
+// 	var wow = new WOW({
+// 		boxClass: 'wow',
+// 		animateClass: 'animated',
+// 		offset: 0,
+// 		mobile: false,
+// 		live: true
+// 	});
+// 	wow.init();
+// }
 
 
 })(jQuery);

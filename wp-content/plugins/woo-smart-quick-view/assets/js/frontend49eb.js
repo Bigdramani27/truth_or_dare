@@ -23,12 +23,7 @@ var woosq_ids = [], woosq_products = [];
       }
     });
 
-    // quick view
-    if (woosq_vars.quick_view > 0) {
-      setTimeout(function() {
-        woosq_open(woosq_vars.quick_view);
-      }, 1000);
-    }
+    
   });
 
   $(document).on('click touch', '[href*="#woosq-"]', function(e) {
@@ -143,17 +138,7 @@ var woosq_ids = [], woosq_products = [];
     }
   });
 
-  if (woosq_vars.hashchange === 'yes') {
-    $(window).on('hashchange', function() {
-      if (location.href.indexOf('#woosq') < 0) {
-        if (woosq_vars.view === 'popup') {
-          $.magnificPopup.close();
-        }
 
-        woosq_close();
-      }
-    });
-  }
 
   $(document).on('click touch', '.woosq-overlay, .woosq-close', function() {
     woosq_close();
