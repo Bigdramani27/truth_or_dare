@@ -51,7 +51,7 @@ class Game extends Connection
     // select game tasks for specific game and user. 
     function select_game_for_specific_user($user_id, $type)
     {
-        return $this->fetch("SELECT * from difficulty dif inner join user_game  game on game.difficulty_id = dif.difficulty_id where user_id = '$user_id' and dif.type = '$type' and completed = 'No'");
+        return $this->fetch("SELECT * from difficulty dif inner join user_game  game on game.difficulty_id = dif.difficulty_id where user_id = '$user_id' and dif.type = '$type' and completed = 'No' ORDER BY RAND()");
     }
 
     //update user task completed to yes 

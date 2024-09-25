@@ -200,7 +200,7 @@ $user_id = $_SESSION['user_id'];
         .overall {
             height: 500px;
             border: 8px solid var(--tg-theme-primary);
-            width: 80%;
+            width: 90%;
             margin-right: auto;
             margin-left: auto;
             display: flex;
