@@ -41,3 +41,4 @@ if ($customer == NULL) {
         exit;
     }
 }
+?>

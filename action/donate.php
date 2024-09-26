@@ -47,4 +47,4 @@ if (isset($decodedResponse->data->status) && $decodedResponse->data->status === 
 }
 
 echo json_encode($response);
-
+?>

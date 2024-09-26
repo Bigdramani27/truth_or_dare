@@ -18,3 +18,4 @@ if ($en_password != $c_password) {
 
 
 echo json_encode($response);
+?>

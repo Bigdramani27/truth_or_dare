@@ -17,7 +17,7 @@ $profile = $_SESSION['profile'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <title>Player Details &#8211; MYKD</title>
+    <title>Player Details </title>
 
     <link rel='stylesheet' id='hfe-style-css'
         href='../wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor8ff8.css?ver=1.6.21'

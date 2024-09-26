@@ -414,7 +414,17 @@ $user_id = $_SESSION['user_id'];
                         data-id="78af342" data-element_type="widget" data-widget_type="tg-gallery.default">
                         <div class="elementor-widget-container">
 
-                            <?php $select = select_game_for_specific_user_controller($user_id, $difficulty);
+                        <?php $select = select_game_for_specific_user_controller($user_id, $difficulty);
+                            array_walk_recursive($select, function(&$item, $key) {
+    $item = mb_convert_encoding($item, 'UTF-8', 'UTF-8');
+});
+
+// Encode to JSON
+$json = json_encode($select, JSON_UNESCAPED_UNICODE);
+
+if (json_last_error() !== JSON_ERROR_NONE) {
+    echo 'JSON encoding error: ' . json_last_error_msg();
+}
 
                             ?>
                             <div class="overall">

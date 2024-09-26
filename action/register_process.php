@@ -11,16 +11,19 @@ $cpassword = $_POST['cpassword'];
 // checking if passwords match
 if ($password != $cpassword) {
     $response = array('success' => false, 'message' => 'Passwords do not match!');
+    exit();
 } else {
     $customer = check_user_email_controller($email);
 
     if ($customer != NULL) {
         $response = array('success' => false, 'message' => 'The email you entered already exists!');
+        exit();
     } else {
         $check_username = check_user_username_controller($username); // Assuming you have a function like this
 
         if ($check_username != NULL) {
             $response = array('success' => false, 'message' => 'The username you entered already exists!');
+            exit();
         } else {
             $generate =  uniqid();
             // Hash the password
@@ -59,3 +62,4 @@ if ($password != $cpassword) {
 
 echo json_encode($response);
 exit();
+?>
